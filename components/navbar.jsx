@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { assets } from "@/assets/assets";
+import { assets } from "../assets/assets.js";
 import { useState, useEffect } from "react";
 import { FaBars, FaRegMoon, FaRegSun } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
@@ -54,7 +54,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
         <Image
           src={assets.header_bg_color}
@@ -153,7 +153,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   );
 };
 

@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌐 Mazin Emad – Portfolio
 
-## Getting Started
+Welcome to my personal developer portfolio, built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/). This site showcases my projects, skills, and experience as a frontend developer.
 
-First, run the development server:
+## 🚀 Tech Stack
+
+- **Next.js** – App Router, SEO optimization, performance-focused
+- **Tailwind CSS** – Utility-first styling with custom themes
+- **TypeScript** (optional) – For type safety and better DX
+- **Framer Motion** – Smooth animations and transitions
+- **Vercel** – Hosting and CI/CD
+
+## 📁 Project Structure
+
+```
+/app           # Pages and routes (App Router)
+/components    # Reusable UI components
+/public        # Static assets
+/styles        # Global styles (if needed)
+/utils         # Utility functions and helpers
+```
+
+## 🧰 Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/mazinemad/portfolio.git
+cd portfolio
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn
+```
+
+### 3. Run the dev server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` to view it in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌟 Features
 
-## Learn More
+- Responsive, mobile-friendly design
+- Dark mode support
+- SEO and metadata configured
+- Animated transitions
+- Dynamic project and skills section
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can customize the content in:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/data` or `/content` (if you use JSON/MDX)
+- `/components` for UI changes
+- `/app/page.tsx` for the homepage content
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed on [Vercel](https://vercel.com/). To deploy your own:
+
+```bash
+npx vercel
+```
+
+---
+
+## 🙋‍♂️ About Me
+
+I’m Mazin Emad, a frontend developer passionate about building clean, performant interfaces using React, Firebase, and modern web tools.
+
+- 📫 [Contact](mazin0emd@gmail.com)
+- 🌍 [Live Portfolio](https://yourdomain.com)
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).

@@ -1,9 +1,30 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-hover: var(--hover);
+  --color-theme: var(--theme);
+  --color-myText: var(--text);
+  --color-myGray: var(--gray);
+  --font-outfit: "Outfit", sans-serif;
+  --font-ovo: "Ovo", serif;
+  --shadow-ma: 4px 4px 0 var(--sh);
+  --grid-template-columns-mazin: repeat(auto-fit, minmax(220px, 1fr));
 }
-* {
-  font-family: "Outfit";
+
+:root {
+  --hover: #fcf4ff;
+  --theme: #ffffff;
+  --text: #000;
+  --sh: #000;
+  --gray: #364153;
+}
+
+.dark {
+  --hover: #2a004a;
+  --theme: #11001f;
+  --text: #fff;
+  --sh: #fff;
+  --gray: #d1d5dc;
 }

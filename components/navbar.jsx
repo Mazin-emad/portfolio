@@ -7,7 +7,7 @@ import { FaBars, FaRegMoon, FaRegSun } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
 import { FiArrowUpRight } from "react-icons/fi";
 
-const navbar = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDark, setIsDark] = useState(false);
@@ -157,4 +157,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;

@@ -47,6 +47,12 @@ export const workData = [
     link: "https://mazin-blog.netlify.app/",
   },
   {
+    title: "Job Killers",
+    description: "Full Stack Dev.",
+    bgImage: "/job-killers.png",
+    link: "https://job-killers.vercel.app/",
+  },
+  {
     title: "Budget App",
     description: "Full Stack Dev.",
     bgImage: "/budget-app.png",

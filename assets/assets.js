@@ -35,6 +35,12 @@ export const workData = [
     link: "https://raizero.com",
   },
   {
+    title: "Tutorial Dose",
+    description: "Full Stack Dev.",
+    bgImage: "/tutorial-dose.png",
+    link: "https://tutorial-dose.vercel.app/",
+  },
+  {
     title: "Assuit Motorsport",
     description: "Frontend Dev.",
     bgImage: "/assuit-motorsport.png",

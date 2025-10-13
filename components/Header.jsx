@@ -68,7 +68,7 @@ const Header = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
           viewport={{ once: true }}
-          href="/Mazin_Emad_CV.pdf"
+          href="/MazinEmad_Frontend.pdf"
           target="_blank"
           className="border font-outfit border-myGray px-10 py-3 rounded-full flex items-center gap-3"
         >

@@ -35,6 +35,12 @@ export const workData = [
     link: "https://raizero.com",
   },
   {
+    title: "StafflyHR.tech",
+    description: "Frontend Dev.",
+    bgImage: "/staffly.png",
+    link: "https://stafflyhr.tech",
+  },
+  {
     title: "Tutorial Dose",
     description: "Full Stack Dev.",
     bgImage: "/tutorial-dose.png",
@@ -127,7 +133,7 @@ export const infoList = [
   {
     icon: <FaProjectDiagram className="text-3xl" />,
     title: "Projects",
-    description: "Built more than 10 web projects",
+    description: "Built more than 15 web projects",
   },
 ];
 

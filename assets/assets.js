@@ -35,6 +35,12 @@ export const workData = [
     link: "https://raizero.com",
   },
   {
+    title: "Tgim3ah Ecommerce",
+    description: "Frontend Dev.",
+    bgImage: "/tgmi3ah.png",
+    link: "https://tagmi3ah.vercel.app/",
+  },
+  {
     title: "StafflyHR.tech",
     description: "Frontend Dev.",
     bgImage: "/staffly.png",

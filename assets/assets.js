@@ -1,10 +1,10 @@
-import user_image from "./mazin-test.png";
+import profile_img from "./mazin-test.png";
 import vscode from "./vscode.png";
 import firebase from "./firebase.png";
 import figma from "./figma.png";
 import git from "./git.png";
 import mongodb from "./mongodb.png";
-import profile_img from "./mazin-test.png";
+import user_image from "./mazin3.jpg";
 import header_bg_color from "./header-bg-color.png";
 import {
   FaUserGraduate,

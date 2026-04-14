@@ -33,3 +33,39 @@
   background-color: #6800b7;
   color: #fff;
 }
+
+/* Custom Scrollbar Styles */
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gray) transparent;
+  }
+
+  /* Chrome, Edge, and Safari */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(160, 123, 161, 0.4);
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background-color: rgba(104, 0, 183, 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(160, 123, 161, 0.8);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(104, 0, 183, 0.8);
+  }
+}

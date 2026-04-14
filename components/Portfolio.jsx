@@ -5,12 +5,22 @@ import { BsSendFill } from "react-icons/bs";
 import { FaCloudDownloadAlt, FaCloudUploadAlt } from "react-icons/fa";
 import { motion } from "motion/react";
 import SectionWrapper from "./SectionWrapper";
+import ProjectModal from "./ProjectModal";
 
 const Portfolio = () => {
   const [showMore, setShowMore] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const handleShowMore = () => {
     setShowMore(!showMore);
+  };
+
+  const handleOpenProject = (project) => {
+    setSelectedProject(project);
+  };
+
+  const handleCloseProject = () => {
+    setSelectedProject(null);
   };
 
   return (
@@ -35,14 +45,11 @@ const Portfolio = () => {
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.3 }}
               key={index}
-              className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative group"
+              className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative group cursor-pointer"
               style={{ backgroundImage: `url(${item.bgImage})` }}
+              onClick={() => handleOpenProject(item)}
             >
-              <a
-                href={item.link}
-                target="_blank"
-                className="bg-white dark:bg-hover w-10/12 cursor-pointer rounded-md py-3 duration-500 group-hover:bottom-7  px-5 absolute bottom-5 left-1/2 -translate-x-1/2 flex justify-between items-center"
-              >
+              <div className="bg-white dark:bg-hover w-10/12 rounded-md py-3 duration-500 group-hover:bottom-7 px-5 absolute bottom-5 left-1/2 -translate-x-1/2 flex justify-between items-center">
                 <div>
                   <h2 className="font-semibold font-outfit">{item.title}</h2>
                   <p className="text-sm text-myGray font-outfit">
@@ -52,7 +59,7 @@ const Portfolio = () => {
                 <div className="border border-black dark:border-white rounded-full w-9 group-hover:bg-lime-300 duration-400 aspect-square flex items-center justify-center shadow-[2px_2px_0_black] dark:shadow-[2px_2px_0_white]">
                   <BsSendFill className="text-xl" />
                 </div>
-              </a>
+              </div>
             </motion.div>
           ))}
       </motion.div>
@@ -75,6 +82,12 @@ const Portfolio = () => {
           </>
         )}
       </motion.button>
+
+      {/* Project Detail Modal */}
+      <ProjectModal
+        project={selectedProject}
+        onClose={handleCloseProject}
+      />
     </SectionWrapper>
   );
 };

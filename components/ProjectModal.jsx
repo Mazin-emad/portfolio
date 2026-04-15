@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { IoCloseSharp } from "react-icons/io5";
 import { FiExternalLink } from "react-icons/fi";
-import { useEffect } from "react";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { useEffect, useState, useCallback } from "react";
 
 const backdropVariants = {
   hidden: { opacity: 0 },
@@ -34,6 +35,125 @@ const modalVariants = {
   },
 };
 
+const slideVariants = {
+  enter: (direction) => ({
+    x: direction > 0 ? "100%" : "-100%",
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 300, damping: 30 },
+  },
+  exit: (direction) => ({
+    x: direction > 0 ? "-100%" : "100%",
+    opacity: 0,
+    transition: { duration: 0.2 },
+  }),
+};
+
+// --- Image Carousel ---
+const ImageCarousel = ({ images }) => {
+  const [[activeIndex, direction], setPage] = useState([0, 0]);
+
+  const paginate = useCallback(
+    (newDirection) => {
+      setPage(([prev]) => {
+        const next =
+          (prev + newDirection + images.length) % images.length;
+        return [next, newDirection];
+      });
+    },
+    [images.length]
+  );
+
+  const goTo = (index) => {
+    setPage(([prev]) => [index, index > prev ? 1 : -1]);
+  };
+
+  // Reset index when images change (new project opened)
+  useEffect(() => {
+    setPage([0, 0]);
+  }, [images]);
+
+  const hasMultiple = images.length > 1;
+
+  return (
+    <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden rounded-t-2xl bg-black/20 select-none">
+      {/* Slides */}
+      <AnimatePresence initial={false} custom={direction} mode="popLayout">
+        <motion.div
+          key={activeIndex}
+          custom={direction}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          className="absolute inset-0"
+        >
+          <Image
+            src={images[activeIndex]}
+            alt={`Project screenshot ${activeIndex + 1}`}
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 672px) 100vw, 672px"
+            priority={activeIndex === 0}
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 pointer-events-none" />
+
+      {/* Arrow buttons — only shown when multiple images */}
+      {hasMultiple && (
+        <>
+          <button
+            onClick={() => paginate(-1)}
+            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors duration-200 backdrop-blur-sm"
+            aria-label="Previous image"
+          >
+            <MdChevronLeft className="text-2xl" />
+          </button>
+          <button
+            onClick={() => paginate(1)}
+            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors duration-200 backdrop-blur-sm"
+            aria-label="Next image"
+          >
+            <MdChevronRight className="text-2xl" />
+          </button>
+        </>
+      )}
+
+      {/* Dot indicators */}
+      {hasMultiple && (
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              aria-label={`Go to image ${i + 1}`}
+              className={`rounded-full transition-all duration-300 ${
+                i === activeIndex
+                  ? "w-5 h-2 bg-white"
+                  : "w-2 h-2 bg-white/50 hover:bg-white/75"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Image counter badge */}
+      {hasMultiple && (
+        <div className="absolute top-4 left-4 z-20 text-xs font-outfit text-white bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-full">
+          {activeIndex + 1} / {images.length}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// --- Main Modal ---
 const ProjectModal = ({ project, onClose }) => {
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -53,6 +173,14 @@ const ProjectModal = ({ project, onClose }) => {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
+
+  // Build the images array: prefer project.images[], fall back to bgImage
+  const images =
+    project?.images && project.images.length > 0
+      ? project.images
+      : project?.bgImage
+      ? [project.bgImage]
+      : [];
 
   return (
     <AnimatePresence>
@@ -91,23 +219,12 @@ const ProjectModal = ({ project, onClose }) => {
               <IoCloseSharp className="text-xl" />
             </button>
 
-            {/* Project Image */}
-            <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden rounded-t-2xl">
-              <Image
-                src={project.bgImage}
-                alt={project.title}
-                fill
-                className="object-cover object-top hover:scale-105 transition-transform duration-700"
-                sizes="(max-width: 672px) 100vw, 672px"
-                priority
-              />
-              {/* Gradient overlay for readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
-            </div>
+            {/* Image Carousel */}
+            {images.length > 0 && <ImageCarousel images={images} />}
 
             {/* Body */}
             <div className="p-6 sm:p-8">
-              {/* Title & Role Row */}
+              {/* Title & Year Row */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <h2 className="text-2xl sm:text-3xl font-bold font-outfit">
                   {project.title}

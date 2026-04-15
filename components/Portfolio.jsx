@@ -39,7 +39,7 @@ const Portfolio = () => {
         viewport={{ once: true }}
       >
         {workData
-          .slice(0, showMore ? workData.length : 4)
+          .slice(0, showMore ? workData.length : 8)
           .map((item, index) => (
             <motion.div
               whileHover={{ scale: 1.01 }}

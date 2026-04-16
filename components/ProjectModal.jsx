@@ -5,6 +5,13 @@ import { IoCloseSharp } from "react-icons/io5";
 import { FiExternalLink } from "react-icons/fi";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { useEffect, useState, useCallback } from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { FaGithub } from "react-icons/fa";
 
 const backdropVariants = {
   hidden: { opacity: 0 },
@@ -264,27 +271,67 @@ const ProjectModal = ({ project, onClose }) => {
               )}
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap gap-3 pt-2">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-black text-white dark:bg-white dark:text-black font-outfit text-sm font-medium hover:opacity-90 transition-opacity duration-200"
-                >
-                  Live Demo
-                  <FiExternalLink className="text-lg" />
-                </a>
+              <TooltipProvider>
+                <div className="flex flex-wrap gap-3 pt-2">
+                  {project.liveDemoMessage ? (
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-black text-white dark:bg-white dark:text-black font-outfit text-sm font-medium hover:opacity-90 transition-opacity duration-200"
+                        >
+                          Live Demo
+                          <FaGithub className="text-lg" />
+                        </a>
+                      </TooltipTrigger>
+                      <TooltipContent className="bg-red-500 border-red-500 text-white">
+                        <p>{project.liveDemoMessage}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  ) : (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-black text-white dark:bg-white dark:text-black font-outfit text-sm font-medium hover:opacity-90 transition-opacity duration-200"
+                    >
+                      Live Demo
+                      <FiExternalLink className="text-lg" />
+                    </a>
+                  )}
 
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-2.5 rounded-full border border-gray-400 dark:border-white/30 font-outfit text-sm font-medium hover:bg-hover dark:hover:bg-white/10 transition-colors duration-200"
-                >
-                  Source Code
-                  <FiExternalLink className="text-lg" />
-                </a>
-              </div>
+                  {project.sourceCodeMessage ? (
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-6 py-2.5 rounded-full border border-gray-400 dark:border-white/30 font-outfit text-sm font-medium hover:bg-hover dark:hover:bg-white/10 transition-colors duration-200"
+                        >
+                          Source Code
+                          <FiExternalLink className="text-lg" />
+                        </a>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{project.sourceCodeMessage}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  ) : (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-2.5 rounded-full border border-gray-400 dark:border-white/30 font-outfit text-sm font-medium hover:bg-hover dark:hover:bg-white/10 transition-colors duration-200"
+                    >
+                      Source Code
+                      <FiExternalLink className="text-lg" />
+                    </a>
+                  )}
+                </div>
+              </TooltipProvider>
             </div>
           </motion.div>
         </motion.div>

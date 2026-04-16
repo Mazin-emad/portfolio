@@ -47,6 +47,8 @@ export const workData = [
     role: "Frontend Developer",
     year: "2025 - now",
     github: "https://github.com/Mazin-emad",
+    sourceCodeMessage: "Private Repo",
+    liveDemoMessage: "Some backend repairs",
   },
   {
     title: "Wsyelh",
@@ -70,6 +72,8 @@ export const workData = [
     role: "Frontend Developer",
     year: "2025 - 2026",
     github: "https://github.com/Mazin-emad",
+    sourceCodeMessage: "Private Repo",
+    liveDemoMessage: "Some backend repairs",
   },
   {
     title: "RaiZero.com",
@@ -125,13 +129,13 @@ export const workData = [
       "/anime-frog/settings.png",
       "/anime-frog/white.png",
     ],
-    link: "https://github.com/Mazin-emad",
+    link: "https://drive.google.com/file/d/1IqQq4qet3LuI2eZyHk0rlZdUMoKkaaR3/view?usp=sharing",
     longDescription:
       "Anime Frog is a feature-rich desktop application I built in my free time, combining my love for anime with my passion for development. Powered by the AniList GraphQL API, it delivers a comprehensive anime browsing experience. Users can search and explore a vast anime catalog, view detailed information on any title, manage personal watchlists, track favorites, and tweak app preferences through a dedicated settings panel. The entire app was built with Electron, giving it a native desktop feel with a polished, responsive UI — all crafted without a backend, driven purely by GraphQL queries.",
-    technologies: ["Electron", "React", "AniList GraphQL API", "CSS Modules"],
+    technologies: ["Electron", "React", "GraphQL","AniList API", "CSS Modules"],
     role: "Desktop App Developer",
     year: "2025",
-    github: "https://github.com/Mazin-emad",
+    github: "https://github.com/Mazin-emad/anime-frog",
   },
   {
     title: "Tutorial Dose",
@@ -145,6 +149,8 @@ export const workData = [
     role: "Full Stack Developer",
     year: "2025",
     github: "https://github.com/Mazin-emad",
+    sourceCodeMessage: "Private Repo",
+    liveDemoMessage: "Some backend repairs",
   },
   {
     title: "Assuit Motorsport",
@@ -158,6 +164,8 @@ export const workData = [
     role: "Frontend Developer",
     year: "2023",
     github: "https://github.com/Mazin-emad",
+    sourceCodeMessage: "Private Repo",
+    liveDemoMessage: "Some backend repairs",
   },
   {
     title: "Mazin Blog",
@@ -184,6 +192,8 @@ export const workData = [
     role: "Full Stack Developer",
     year: "2023",
     github: "https://github.com/Mazin-emad",
+    sourceCodeMessage: "Private Repo",
+    liveDemoMessage: "Some backend repairs",
   },
   {
     title: "Budget App",

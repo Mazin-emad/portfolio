@@ -48,7 +48,7 @@ export const workData = [
     year: "2025 - now",
     github: "https://github.com/Mazin-emad",
     sourceCodeMessage: "Private Repo",
-    liveDemoMessage: "Some backend repairs",
+    liveDemoMessage: "Backend Server is Down",
   },
   {
     title: "Wsyelh",
@@ -73,11 +73,12 @@ export const workData = [
     year: "2025 - 2026",
     github: "https://github.com/Mazin-emad",
     sourceCodeMessage: "Private Repo",
-    liveDemoMessage: "Some backend repairs",
+    liveDemoMessage: "Not Hosted Yet",
   },
   {
     title: "RaiZero.com",
     description: "Frontend Dev.",
+    sourceCodeMessage: "Private Repo",
     bgImage: "/raizero.png",
     images: ["/raizero.png"],
     link: "https://raizero.com",
@@ -91,6 +92,7 @@ export const workData = [
   {
     title: "Tajmi3ah",
     description: "Frontend Dev.",
+    liveDemoMessage: "Database is down",
     bgImage: "/tgmi3ah.png",
     images: ["/tgmi3ah.png"],
     link: "https://tagmi3ah.vercel.app/",
@@ -113,6 +115,8 @@ export const workData = [
     role: "Frontend Developer",
     year: "2026",
     github: "https://github.com/Mazin-emad",
+    sourceCodeMessage: "Private Repo",
+    liveDemoMessage: "Backend Server is Down",
   },
   {
     title: "Anime Frog",
@@ -148,9 +152,8 @@ export const workData = [
     technologies: ["Next.js", "SupaBase DB", "Clerk", "SQL", "Tailwind CSS"],
     role: "Full Stack Developer",
     year: "2025",
-    github: "https://github.com/Mazin-emad",
-    sourceCodeMessage: "Private Repo",
-    liveDemoMessage: "Some backend repairs",
+    github: "https://github.com/Mazin-emad/tutorial-dose",
+    liveDemoMessage: "Backend Server is Down",
   },
   {
     title: "Assuit Motorsport",
@@ -165,7 +168,7 @@ export const workData = [
     year: "2023",
     github: "https://github.com/Mazin-emad",
     sourceCodeMessage: "Private Repo",
-    liveDemoMessage: "Some backend repairs",
+    liveDemoMessage: "Shortage in Funding",
   },
   {
     title: "Mazin Blog",
@@ -191,9 +194,8 @@ export const workData = [
     technologies: ["Vue.js", "TS", "Bootstrap", "Node.js", "MongoDB"],
     role: "Full Stack Developer",
     year: "2023",
-    github: "https://github.com/Mazin-emad",
-    sourceCodeMessage: "Private Repo",
-    liveDemoMessage: "Some backend repairs",
+    github: "https://github.com/Mazin-emad/job-killers",
+    liveDemoMessage: "Database temporarily offline",
   },
   {
     title: "Budget App",
@@ -232,7 +234,7 @@ export const workData = [
     technologies: ["HTML", "CSS", "JavaScript", "Git", "GitHub Pages"],
     role: "Frontend Developer",
     year: "2023",
-    github: "https://github.com/Mazin-emad",
+    github: "https://github.com/Mazin-emad/profile",
   },
   {
     title: "Todo App",
@@ -242,10 +244,10 @@ export const workData = [
     link: "https://todo-react-v2-nine.vercel.app/",
     longDescription:
       "A feature-rich todo application with task creation, editing, completion tracking, and local storage persistence. Built as a React practice project with a focus on state management and clean component architecture.",
-    technologies: ["React", "CSS", "LocalStorage"],
+    technologies: ["React", "Bootstrap", "LocalStorage"],
     role: "Frontend Developer",
     year: "2022",
-    github: "https://github.com/Mazin-emad",
+    github: "https://github.com/Mazin-emad/todo-v2",
   },
 ];
 export const serviceData = [

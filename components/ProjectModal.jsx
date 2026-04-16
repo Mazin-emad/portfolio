@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { IoCloseSharp } from "react-icons/io5";
 import { FiExternalLink } from "react-icons/fi";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { MdChevronLeft, MdChevronRight, MdError, MdLock } from "react-icons/md";
 import { useEffect, useState, useCallback } from "react";
 import {
   Tooltip,
@@ -283,11 +283,12 @@ const ProjectModal = ({ project, onClose }) => {
                           className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-black text-white dark:bg-white dark:text-black font-outfit text-sm font-medium hover:opacity-90 transition-opacity duration-200"
                         >
                           Live Demo
-                          <FaGithub className="text-lg" />
+                          <FiExternalLink className="text-lg" />
                         </a>
                       </TooltipTrigger>
-                      <TooltipContent className="bg-red-500 border-red-500 text-white">
+                      <TooltipContent className="text-red-500 dark:text-red-400 font-medium text-sm px-3 py-2 flex items-center gap-1.5">
                         <p>{project.liveDemoMessage}</p>
+                        <MdError className="text-lg" />
                       </TooltipContent>
                     </Tooltip>
                   ) : (
@@ -312,11 +313,12 @@ const ProjectModal = ({ project, onClose }) => {
                           className="flex items-center gap-2 px-6 py-2.5 rounded-full border border-gray-400 dark:border-white/30 font-outfit text-sm font-medium hover:bg-hover dark:hover:bg-white/10 transition-colors duration-200"
                         >
                           Source Code
-                          <FiExternalLink className="text-lg" />
+                          <FaGithub className="text-lg" />
                         </a>
                       </TooltipTrigger>
-                      <TooltipContent>
+                      <TooltipContent className="text-sm px-3 py-2 flex items-center gap-1.5">
                         <p>{project.sourceCodeMessage}</p>
+                        <MdLock className="text-lg text-gray-400" />
                       </TooltipContent>
                     </Tooltip>
                   ) : (
@@ -327,7 +329,7 @@ const ProjectModal = ({ project, onClose }) => {
                       className="flex items-center gap-2 px-6 py-2.5 rounded-full border border-gray-400 dark:border-white/30 font-outfit text-sm font-medium hover:bg-hover dark:hover:bg-white/10 transition-colors duration-200"
                     >
                       Source Code
-                      <FiExternalLink className="text-lg" />
+                      <FaGithub className="text-lg" />
                     </a>
                   )}
                 </div>

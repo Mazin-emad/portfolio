@@ -284,17 +284,17 @@ export const infoList = [
   {
     icon: <IoCodeSlashOutline className="text-3xl" />,
     title: "Tech Stack",
-    description: "Typescript, React Js, Next Js, Node Js",
+    description: "Typescript, Angular, Next Js, Node Js",
   },
   {
     icon: <FaUserGraduate className="text-3xl" />,
     title: "Education",
-    description: "Final-year student at EELU· Graduating in 2026",
+    description: "Fresh graduate at EELU· Class of 2026",
   },
   {
     icon: <FaProjectDiagram className="text-3xl" />,
     title: "Projects",
-    description: "Built more than 15 web projects",
+    description: "Built more than 20 web projects",
   },
 ];
 

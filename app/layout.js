@@ -23,7 +23,7 @@ export const metadata = {
     "Frontend Developer",
     "Full Stack Developer",
     "Web Development",
-    "React",
+    "Angular",
     "Next.js",
     "Tailwind CSS",
     "JavaScript",
@@ -57,7 +57,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Mazin Emad | Software Engineer",
     description:
-      "Software Engineer & Frontend Developer from Egypt specializing in React, Next.js, and modern web environments.",
+      "Software Engineer & Frontend Developer from Egypt specializing in Angular, Next.js, and modern web environments.",
     images: ["/og-image.png"],
   },
   robots: {

@@ -1,10 +1,10 @@
-import profile_img from "./mazin-test.png";
+import profile_img from "./mazin44.jpeg";
 import vscode from "./vscode.png";
 import firebase from "./firebase.png";
 import figma from "./figma.png";
 import git from "./git.png";
 import mongodb from "./mongodb.png";
-import user_image from "./mazin3.jpg";
+import user_image from "./eng-mazin2.jpeg";
 import header_bg_color from "./header-bg-color.png";
 import {
   FaUserGraduate,
@@ -136,7 +136,13 @@ export const workData = [
     link: "https://drive.google.com/file/d/1IqQq4qet3LuI2eZyHk0rlZdUMoKkaaR3/view?usp=sharing",
     longDescription:
       "Anime Frog is a feature-rich desktop application I built in my free time, combining my love for anime with my passion for development. Powered by the AniList GraphQL API, it delivers a comprehensive anime browsing experience. Users can search and explore a vast anime catalog, view detailed information on any title, manage personal watchlists, track favorites, and tweak app preferences through a dedicated settings panel. The entire app was built with Electron, giving it a native desktop feel with a polished, responsive UI — all crafted without a backend, driven purely by GraphQL queries.",
-    technologies: ["Electron", "React", "GraphQL","AniList API", "CSS Modules"],
+    technologies: [
+      "Electron",
+      "React",
+      "GraphQL",
+      "AniList API",
+      "CSS Modules",
+    ],
     role: "Desktop App Developer",
     year: "2025",
     github: "https://github.com/Mazin-emad/anime-frog",

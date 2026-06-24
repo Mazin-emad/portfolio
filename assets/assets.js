@@ -15,6 +15,8 @@ import {
   FaDesktop,
 } from "react-icons/fa";
 import { IoCodeSlashOutline } from "react-icons/io5";
+import { FaDocker } from "react-icons/fa";
+import { SiClaude } from "react-icons/si";
 
 export const assets = {
   user_image,
@@ -71,6 +73,21 @@ export const workData = [
     technologies: ["React", "shadcn/ui", "Tailwind CSS", "React PDF"],
     role: "Frontend Developer",
     year: "2025 - 2026",
+    github: "https://github.com/Mazin-emad",
+    sourceCodeMessage: "Private Repo",
+    liveDemoMessage: "Not Hosted Yet",
+  },
+  {
+    title: "ESKON",
+    description: "Frontend Dev.",
+    video: "/eskon.mp4",
+    images: [],
+    link: "#",
+    longDescription:
+      "A collaborative property rental platform built as part of a cross-functional team, delivering a seamless experience for listing, searching, and managing rental properties. I led the frontend development using Angular and TypeScript, implementing responsive interfaces with Angular Material and Reactive Forms. The application leverages NgRx for state management and RxJS for reactive data flow, integrating with a .NET backend via REST APIs. Worked closely with backend engineers to ensure scalable architecture, clean component design, and a polished, user-friendly experience throughout the platform.",
+    technologies: ["Angular", "TypeScript", "RxJS", "NgRx", "Angular Material", "Reactive Forms"],
+    role: "Frontend Developer",
+    year: "2026",
     github: "https://github.com/Mazin-emad",
     sourceCodeMessage: "Private Repo",
     liveDemoMessage: "Not Hosted Yet",
@@ -305,9 +322,11 @@ export const infoList = [
 ];
 
 export const toolsList = [
-  assets.vscode,
-  assets.firebase,
-  assets.mongodb,
-  assets.figma,
-  assets.git,
+  { type: "image", src: assets.vscode, alt: "VS Code" },
+  { type: "image", src: assets.firebase, alt: "Firebase" },
+  { type: "image", src: assets.mongodb, alt: "MongoDB" },
+  { type: "image", src: assets.figma, alt: "Figma" },
+  { type: "image", src: assets.git, alt: "Git" },
+  { type: "icon", icon: <FaDocker />, alt: "Docker", color: "#2496ED" },
+  { type: "icon", icon: <SiClaude />, alt: "Claude AI", color: "#D97757" },
 ];

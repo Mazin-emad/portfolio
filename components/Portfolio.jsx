@@ -3,6 +3,7 @@ import { workData } from "@/assets/assets";
 import { useState } from "react";
 import { BsSendFill } from "react-icons/bs";
 import { FaCloudDownloadAlt, FaCloudUploadAlt } from "react-icons/fa";
+import { MdVideocam } from "react-icons/md";
 import { motion } from "motion/react";
 import SectionWrapper from "./SectionWrapper";
 import ProjectModal from "./ProjectModal";
@@ -45,10 +46,26 @@ const Portfolio = () => {
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.3 }}
               key={index}
-              className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative group cursor-pointer"
-              style={{ backgroundImage: `url(${item.bgImage})` }}
+              className={`aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative group cursor-pointer overflow-hidden ${
+                !item.bgImage && item.video
+                  ? "bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900"
+                  : ""
+              }`}
+              style={
+                item.bgImage
+                  ? { backgroundImage: `url(${item.bgImage})` }
+                  : undefined
+              }
               onClick={() => handleOpenProject(item)}
             >
+              {/* Video indicator for projects with video */}
+              {item.video && !item.images?.length && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <MdVideocam className="text-3xl text-white ml-1" />
+                  </div>
+                </div>
+              )}
               <div className="bg-white dark:bg-hover w-10/12 rounded-md py-3 duration-500 group-hover:bottom-7 px-5 absolute bottom-5 left-1/2 -translate-x-1/2 flex justify-between items-center">
                 <div>
                   <h2 className="font-semibold font-outfit">{item.title}</h2>

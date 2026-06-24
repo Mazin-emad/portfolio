@@ -86,7 +86,11 @@ const About = () => {
                 className="flex w-12 sm:w-14 aspect-square hover:-translate-y-1 duration-500 border-gray-400 dark:border-white items-center justify-center p-3 border rounded-md"
                 key={index}
               >
-                <Image src={item} alt={"tool" + index} className="w-5 sm:w-7" />
+                {item.type === "icon" ? (
+                  <span className="text-xl sm:text-2xl" style={{ color: item.color }}>{item.icon}</span>
+                ) : (
+                  <Image src={item.src} alt={item.alt} className="w-5 sm:w-7" />
+                )}
               </motion.li>
             ))}
           </motion.ul>

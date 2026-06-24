@@ -59,31 +59,39 @@ const slideVariants = {
   }),
 };
 
-// --- Image Carousel ---
-const ImageCarousel = ({ images }) => {
+// --- Media Carousel (images + video) ---
+const MediaCarousel = ({ images, video }) => {
+  // Build slides: video (if present) + images
+  const slides = [];
+  if (video) slides.push({ type: "video", src: video });
+  if (images && images.length > 0) {
+    images.forEach((img) => slides.push({ type: "image", src: img }));
+  }
+
   const [[activeIndex, direction], setPage] = useState([0, 0]);
 
   const paginate = useCallback(
     (newDirection) => {
       setPage(([prev]) => {
         const next =
-          (prev + newDirection + images.length) % images.length;
+          (prev + newDirection + slides.length) % slides.length;
         return [next, newDirection];
       });
     },
-    [images.length]
+    [slides.length]
   );
 
   const goTo = (index) => {
     setPage(([prev]) => [index, index > prev ? 1 : -1]);
   };
 
-  // Reset index when images change (new project opened)
+  // Reset index when slides change (new project opened)
   useEffect(() => {
     setPage([0, 0]);
-  }, [images]);
+  }, [images, video]);
 
-  const hasMultiple = images.length > 1;
+  const hasMultiple = slides.length > 1;
+  const currentSlide = slides[activeIndex];
 
   return (
     <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden rounded-t-2xl bg-black/20 select-none">
@@ -98,34 +106,46 @@ const ImageCarousel = ({ images }) => {
           exit="exit"
           className="absolute inset-0"
         >
-          <Image
-            src={images[activeIndex]}
-            alt={`Project screenshot ${activeIndex + 1}`}
-            fill
-            className="object-cover object-center"
-            sizes="(max-width: 672px) 100vw, 672px"
-            priority={activeIndex === 0}
-          />
+          {currentSlide?.type === "video" ? (
+            <video
+              src={currentSlide.src}
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover object-center"
+            />
+          ) : (
+            <Image
+              src={currentSlide?.src}
+              alt={`Project screenshot ${activeIndex + 1}`}
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 672px) 100vw, 672px"
+              priority={activeIndex === 0}
+            />
+          )}
         </motion.div>
       </AnimatePresence>
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 pointer-events-none" />
 
-      {/* Arrow buttons — only shown when multiple images */}
+      {/* Arrow buttons — only shown when multiple slides */}
       {hasMultiple && (
         <>
           <button
             onClick={() => paginate(-1)}
             className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors duration-200 backdrop-blur-sm"
-            aria-label="Previous image"
+            aria-label="Previous media"
           >
             <MdChevronLeft className="text-2xl" />
           </button>
           <button
             onClick={() => paginate(1)}
             className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors duration-200 backdrop-blur-sm"
-            aria-label="Next image"
+            aria-label="Next media"
           >
             <MdChevronRight className="text-2xl" />
           </button>
@@ -135,11 +155,11 @@ const ImageCarousel = ({ images }) => {
       {/* Dot indicators */}
       {hasMultiple && (
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5">
-          {images.map((_, i) => (
+          {slides.map((slide, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
-              aria-label={`Go to image ${i + 1}`}
+              aria-label={`Go to ${slide.type === "video" ? "video" : `image ${i + 1}`}`}
               className={`rounded-full transition-all duration-300 ${
                 i === activeIndex
                   ? "w-5 h-2 bg-white"
@@ -150,10 +170,10 @@ const ImageCarousel = ({ images }) => {
         </div>
       )}
 
-      {/* Image counter badge */}
+      {/* Slide counter badge */}
       {hasMultiple && (
         <div className="absolute top-4 left-4 z-20 text-xs font-outfit text-white bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-full">
-          {activeIndex + 1} / {images.length}
+          {activeIndex + 1} / {slides.length}
         </div>
       )}
     </div>
@@ -188,6 +208,8 @@ const ProjectModal = ({ project, onClose }) => {
       : project?.bgImage
       ? [project.bgImage]
       : [];
+
+  const video = project?.video || null;
 
   return (
     <AnimatePresence>
@@ -226,8 +248,10 @@ const ProjectModal = ({ project, onClose }) => {
               <IoCloseSharp className="text-xl" />
             </button>
 
-            {/* Image Carousel */}
-            {images.length > 0 && <ImageCarousel images={images} />}
+            {/* Media Carousel */}
+            {(images.length > 0 || video) && (
+              <MediaCarousel images={images} video={video} />
+            )}
 
             {/* Body */}
             <div className="p-6 sm:p-8">

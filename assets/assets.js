@@ -88,8 +88,8 @@ export const workData = [
     technologies: ["Angular", "TypeScript", "RxJS", "NgRx", "Angular Material", "Reactive Forms"],
     role: "Frontend Developer",
     year: "2026",
-    github: "https://github.com/Mazin-emad",
-    sourceCodeMessage: "Private Repo",
+    github: "https://github.com/Mazin-emad/eskon",
+    // sourceCodeMessage: "Private Repo",
     liveDemoMessage: "Not Hosted Yet",
   },
   {

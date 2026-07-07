@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "https://mazin-emad.vercel.app/:splat"
+  status = 301
+  force = true

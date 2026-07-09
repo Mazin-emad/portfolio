@@ -58,7 +58,7 @@ const Navbar = () => {
       <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
         <Image
           src={assets.header_bg_color}
-          alt="background"
+          alt=""
           className="w-full"
         />
       </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
           : ""
       }`}
       >
-        <a href="" className="text-3xl font-bold font-outfit">
+        <a href="" className="text-3xl font-bold font-outfit" aria-label="Mazin Emad - Home">
           Mazin<span className="text-red-500"> .</span>
         </a>
         <ul

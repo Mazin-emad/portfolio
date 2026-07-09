@@ -114,6 +114,7 @@ const MediaCarousel = ({ images, video }) => {
               muted
               loop
               playsInline
+              title="Project demo video"
               className="w-full h-full object-cover object-center"
             />
           ) : (

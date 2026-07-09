@@ -1,6 +1,7 @@
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { siteConfig } from "@/lib/siteConfig";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -13,52 +14,46 @@ const ovo = Ovo({
 });
 
 export const metadata = {
-  title: "Mazin Emad | Software Engineer",
-  description:
-    "Portfolio of Mazin Emad, a Software Engineer and Frontend Developer from Egypt. Explore my web development projects, skills, and resume.",
-  keywords: [
-    "Mazin Emad",
-    "Portfolio",
-    "Software Engineer",
-    "Frontend Developer",
-    "Full Stack Developer",
-    "Web Development",
-    "Angular",
-    "Next.js",
-    "Tailwind CSS",
-    "JavaScript",
-    "TypeScript",
-    "Egypt"
-  ],
-  authors: [{ name: "Mazin Emad" }],
-  creator: "Mazin Emad",
-  metadataBase: new URL("https://mazin-emad.netlify.app/"),
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  applicationName: `${siteConfig.name} Portfolio`,
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
   alternates: {
     canonical: "/",
+  },
+  verification: {
+    google: siteConfig.googleVerification,
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mazin-emad.netlify.app/",
-    title: "Mazin Emad | Software Engineer",
-    description:
-      "Welcome to my portfolio! I'm a Software Engineer who loves building elegant, user-friendly web experiences.",
-    siteName: "Mazin Emad Portfolio",
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: `${siteConfig.name} Portfolio`,
     images: [
       {
-        url: "/og-image.png",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "Mazin Emad - Portfolio & Resume",
+        alt: `${siteConfig.name} - Portfolio & Resume`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mazin Emad | Software Engineer",
-    description:
-      "Software Engineer & Frontend Developer from Egypt specializing in Angular, Next.js, and modern web environments.",
-    images: ["/og-image.png"],
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
   robots: {
     index: true,

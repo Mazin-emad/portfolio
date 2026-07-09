@@ -68,7 +68,7 @@ const Portfolio = () => {
               )}
               <div className="bg-white dark:bg-hover w-10/12 rounded-md py-3 duration-500 group-hover:bottom-7 px-5 absolute bottom-5 left-1/2 -translate-x-1/2 flex justify-between items-center">
                 <div>
-                  <h2 className="font-semibold font-outfit">{item.title}</h2>
+                  <h3 className="font-semibold font-outfit">{item.title}</h3>
                   <p className="text-sm text-myGray font-outfit">
                     {item.description}
                   </p>

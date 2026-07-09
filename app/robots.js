@@ -1,9 +1,12 @@
+import { siteConfig } from "@/lib/siteConfig";
+
 export default function robots() {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: "/api/",
     },
-    sitemap: "https://mazin-emad.netlify.app/sitemap.xml",
+    sitemap: `${siteConfig.url}/sitemap.xml`,
   };
 }

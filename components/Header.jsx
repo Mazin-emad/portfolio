@@ -17,7 +17,7 @@ const Header = () => {
       >
         <Image
           src={assets.profile_img}
-          alt="Mazin Emad image"
+          alt="Mazin Emad - Software Engineer and Frontend Developer"
           className="object-cover translate-y-[0.5px]"
         />
       </motion.div>

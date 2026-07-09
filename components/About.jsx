@@ -25,7 +25,7 @@ const About = () => {
         >
           <Image
             src={assets.user_image}
-            alt="about"
+            alt="Mazin Emad - Software Engineer from Egypt"
             className="w-full rounded-3xl"
           />
         </motion.div>

@@ -1,7 +1,9 @@
+import { siteConfig } from "@/lib/siteConfig";
+
 export default function sitemap() {
   return [
     {
-      url: "https://mazin-emad.netlify.app",
+      url: siteConfig.url,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,

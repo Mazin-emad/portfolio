@@ -4,7 +4,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="flex flex-col justify-between items-center w-full px-5 pt-20 lg:px-8 xl:px-[8%]">
-      <a href="" className="text-3xl font-bold font-outfit">
+      <a href="" className="text-3xl font-bold font-outfit" aria-label="Mazin Emad - Home">
         Mazin<span className="text-red-500"> .</span>
       </a>
       <a

@@ -1,4 +1,17 @@
+import { Outfit, Ovo } from "next/font/google";
+import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { siteConfig } from "@/lib/siteConfig";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const ovo = Ovo({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -55,8 +68,15 @@ export const metadata = {
   },
 };
 
-import ClientLayout from "./client-layout";
-
 export default function RootLayout({ children }) {
-  return <ClientLayout>{children}</ClientLayout>;
+  return (
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body
+        className={`${outfit.className} ${ovo.className} bg-theme duration-300 text-myText antialiased leading-8 overflow-x-hidden`}
+      >
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
 }

@@ -3,38 +3,38 @@ import { motion } from "motion/react";
 const SectionWrapper = ({ children, title, description, subtitle, id }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
       id={id}
-      className="px-6 lg:px-8 pt-16 pb-20 w-full"
+      className="px-[12%] py-10 w-full scroll-mt-20"
       viewport={{ once: true }}
     >
       <motion.h4
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="mb-2 text-muted uppercase tracking-wider text-sm font-medium"
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="text-lg font-ovo text-center mb-2"
         viewport={{ once: true }}
       >
         {subtitle}
       </motion.h4>
       <motion.h2
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="mb-6 text-3xl md:text-4xl lg:text-5xl text-ink font-serif font-bold"
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="text-5xl font-ovo text-center"
         viewport={{ once: true }}
       >
         {title}
       </motion.h2>
 
       <motion.p
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
         viewport={{ once: true }}
-        className="text-center text-muted max-w-2xl mx-auto mb-12"
+        className="text-center text-myGray mt-5 mb-12 max-w-2xl mx-auto"
       >
         {description}
       </motion.p>

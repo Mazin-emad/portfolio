@@ -1,36 +1,38 @@
 import { FaRegEnvelope } from "react-icons/fa";
-import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col justify-between items-center w-full px-5 pt-20 lg:px-8 xl:px-[8%]">
-      <a href="" className="text-3xl font-bold font-outfit" aria-label="Mazin Emad - Home">
-        Mazin<span className="text-red-500"> .</span>
-      </a>
-      <a
-        href="mailto:mazin0emd@gmail.com"
-        className="text-md flex items-center text-myGray gap-2 mt-2"
-      >
-        <FaRegEnvelope className="text-xl" />
-        mazin0emd@gmail.com
-      </a>
-      <div className="flex items-center flex-col sm:flex-row justify-between w-full mt-8 border-t border-gray-500 py-4">
-        <p className="text-sm order-2 mt-2 sm:mt-0 sm:order-1">
-          &copy; {new Date().getFullYear()} Mazin Emad. All rights reserved.
-        </p>
-        <div className="flex items-center gap-5 order-1 sm:order-2">
-          <a target="_blank" href="https://x.com/MazinEmad685945">
-            Twitter
+    <footer className="bg-white/90 backdrop-blur-sm border-t border-line/20 py-12">
+      <div className="flex flex-col items-center gap-6 text-center">
+        <a href="#top" className="flex items-center gap-2 text-2xl font-bold text-ink">
+          <span className="text-accent">ME</span><span>°</span>
+        </a>
+        <p className="text-muted">© {new Date().getFullYear()} Mazin Emad</p>
+        <div className="flex items-center gap-6">
+          <a
+            href="https://github.com/MazinEmad"
+            aria-label="GitHub"
+            className="flex items-center justify-center w-10 h-10 border border-line/30 rounded-full hover:bg-line/10 transition-colors duration-300"
+          >
+            <FaGithub className="w-5 h-5 text-ink" />
           </a>
-          <a target="_blank" href="https://www.linkedin.com/in/mazin-emad10l10">
-            LinkedIn
+          <a
+            href="https://www.linkedin.com/"
+            aria-label="LinkedIn"
+            className="flex items-center justify-center w-10 h-10 border border-line/30 rounded-full hover:bg-line/10 transition-colors duration-300"
+          >
+            <FaLinkedin className="w-5 h-5 text-ink" />
           </a>
-          <a target="_blank" href="https://github.com/Mazin-emad">
-            GitHub
+          <a
+            href="mailto:mazinemaddev@gmail.com"
+            aria-label="Email"
+            className="flex items-center justify-center w-10 h-10 border border-line/30 rounded-full hover:bg-line/10 transition-colors duration-300"
+          >
+            <FaRegEnvelope className="w-5 h-5 text-ink" />
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

@@ -31,6 +31,27 @@ export const assets = {
 
 export const workData = [
   {
+    title: "Again",
+    description: "Frontend Dev.",
+    bgImage: "/again/invoices.png",
+    images: [
+      "/again/invoices.png",
+      "/again/invoice-details.png",
+      "/again/new-invoice.png",
+      "/again/new-variable.png",
+      "/again/account.png",
+    ],
+    link: "#",
+    longDescription:
+      "A complete Arabic-first (RTL) invoicing and inventory platform for Again, built in two weeks. Works 100% offline — staff can create invoices, run all calculations, and print PDFs with no connection, then everything auto-syncs when back online. Runs on mobile, browser, and desktop. Includes client-managed products and pricing rules (no developer needed per change), role-based permissions, shared team invoices that stay in sync, and ready-to-print multi-format PDFs. Backend by Esmail Mohamed.",
+    technologies: ["Next.js", "Tailwind CSS", "PWA", "IndexedDB", "React PDF"],
+    role: "Frontend Developer",
+    year: "2026",
+    github: "https://github.com/Mazin-emad",
+    sourceCodeMessage: "Private Repo",
+    liveDemoMessage: "Private / Internal — Not Hosted Publicly",
+  },
+  {
     title: "Qudra",
     description: "Frontend Dev.",
     bgImage: "/qudra/landing.png",
@@ -67,7 +88,7 @@ export const workData = [
       "/wsyelh/reports.jpeg",
       "/wsyelh/dddd.jpeg",
     ],
-    link: "https://exams.wsyelhi.com/",
+    link: "https://examcorrection.wsyelhi.com/",
     longDescription:
       "A comprehensive exam preparation platform enhanced with AI-driven features to streamline the learning process. I spearheaded the frontend development, crafting a modern and intuitive user interface using React, Shadcn/UI, and Tailwind CSS. The platform integrates seamlessly with a .NET backend to provide a robust experience for students and educators alike. Developed for a private educational client in Saudi Arabia, the site includes features for dynamic exam generation and automated PDF reporting using React PDF.",
     technologies: ["React", "shadcn/ui", "Tailwind CSS", "React PDF"],
@@ -75,7 +96,6 @@ export const workData = [
     year: "2025 - 2026",
     github: "https://github.com/Mazin-emad",
     sourceCodeMessage: "Private Repo",
-    liveDemoMessage: "Not Hosted Yet",
   },
   {
     title: "El-Dokan",

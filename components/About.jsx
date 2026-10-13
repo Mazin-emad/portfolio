@@ -12,21 +12,21 @@ const About = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="flex flex-col w-full lg:flex-row gap-20 my-20"
+        className="flex flex-col w-full lg:flex-row gap-16 my-16"
       >
         <motion.div
-          className="max-w-none w-64 sm:w-80 rounded-3xl"
-          initial={{ opacity: 0, scale: 0.9 }}
+          className="max-w-none w-60 sm:w-72 rounded-2xl"
+          initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{
-            duration: 0.5,
+            duration: 0.6,
           }}
         >
           <Image
             src={assets.user_image}
             alt="Mazin Emad - Software Engineer from Egypt"
-            className="w-full rounded-3xl"
+            className="w-full rounded-2xl"
           />
         </motion.div>
 
@@ -36,11 +36,11 @@ const About = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{
-            duration: 0.5,
-            delay: 0.6,
+            duration: 0.6,
+            delay: 0.4,
           }}
         >
-          <p className="max-w-2xl mb-10 text-myGray">
+          <p className="max-w-2xl mb-8 text-muted">
             I am a software engineer with a passion for building web
             applications that are both functional and aesthetically pleasing. I
             am a quick learner and I am always looking to improve my skills.
@@ -49,27 +49,27 @@ const About = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-3"
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="grid gap-6"
           >
             {infoList.map((item, index) => (
               <motion.div
-                whileHover={{ scale: 1.01 }}
                 key={index}
-                className="border-[0.5px] cursor-pointer hover:bg-hover hover:shadow-ma hover:-translate-y-1 duration-500 border-gray-400 dark:border-white rounded-xl p-6"
+                whileHover={{ scale: 1.02 }}
+                className="border border-line/50 bg-white/80 backdrop-blur-sm rounded-xl p-6 transition-all duration-300 hover:border-line hover:bg-white/90"
               >
                 {item.icon}
-                <h3 className="font-semibold my-4 text-myGray">{item.title}</h3>
-                <p>{item.description}</p>
+                <h3 className="font-semibold my-4 text-ink">{item.title}</h3>
+                <p className="text-muted">{item.description}</p>
               </motion.div>
             ))}
           </motion.div>
           <motion.h4
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.9 }}
-            className="text-myGray my-6"
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="text-ink my-8"
           >
             Tools I use
           </motion.h4>
@@ -78,18 +78,18 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 1 }}
-            className="flex items-center gap-3 sm:gap-5"
+            className="flex items-center gap-4 sm:gap-6 flex-wrap"
           >
             {toolsList.map((item, index) => (
               <motion.li
-                whileHover={{ scale: 1.06 }}
-                className="flex w-12 sm:w-14 aspect-square hover:-translate-y-1 duration-500 border-gray-400 dark:border-white items-center justify-center p-3 border rounded-md"
+                whileHover={{ scale: 1.03 }}
+                className="flex w-10 sm:w-12 aspect-square items-center justify-center p-4 border border-line/50 bg-white/80 backdrop-blur-sm rounded-lg transition-all duration-300 hover:border-line hover:bg-white/90"
                 key={index}
               >
                 {item.type === "icon" ? (
                   <span className="text-xl sm:text-2xl" style={{ color: item.color }}>{item.icon}</span>
                 ) : (
-                  <Image src={item.src} alt={item.alt} className="w-5 sm:w-7" />
+                  <Image src={item.src} alt={item.alt} className="w-6 sm:w-8" />
                 )}
               </motion.li>
             ))}

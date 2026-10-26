@@ -1,0 +1,57 @@
+
+-----
+[1m[31mFATAL[39m[0m: An unexpected Turbopack error occurred. A panic log has been written to C:\Users\Mazin\AppData\Local\Temp\next-panic-fa45bc6bc136cec9d99c4c9950cb0f71.log.
+
+To help make Turbopack better, report this error by clicking here: https://github.com/vercel/next.js/discussions/new?category=turbopack-error-report&title=Turbopack%20Error%3A%20%5Bproject%5D%2Fapp%2Fglobals.css%20%5Bapp-client%5D%20%28css%29&body=Turbopack%20version%3A%20%60e678913a%60%0A%0AError%20message%3A%0A%60%60%60%0ATurbopack%20Error%3A%20%5Bproject%5D%2Fapp%2Fglobals.css%20%5Bapp-client%5D%20%28css%29%0A%60%60%60&labels=Turbopack,Turbopack%20Panic%20Backtrace
+-----
+
+[Error [TurbopackInternalError]: Failed to write app endpoint /page
+
+Caused by:
+- [project]/app/globals.css [app-client] (css)
+- creating new process
+- node process exited before we could connect to it with exit code: 1
+
+Debug info:
+- Execution of TaskId { id: 2147483770 } transient failed
+- Execution of get_written_endpoint_with_issues_operation failed
+- Execution of endpoint_write_to_disk failed
+- Execution of <AppEndpoint as Endpoint>::output failed
+- Failed to write app endpoint /page
+- Execution of AppEndpoint::output failed
+- Execution of AppProject::app_module_graphs failed
+- Execution of SingleModuleGraph::new_with_entries_visited_intern failed
+- [project]/app/globals.css [app-client] (css)
+- Execution of primary_chunkable_referenced_modules failed
+- Execution of <CssModuleAsset as Module>::references failed
+- Execution of parse_css failed
+- Execution of <PostCssTransformedAsset as Asset>::content failed
+- Execution of PostCssTransformedAsset::process failed
+- creating new process
+- node process exited before we could connect to it with exit code: 1
+  Process output:
+  
+  Process error output:
+  node:internal/modules/cjs/loader:1520
+    throw err;
+    ^
+  
+  Error: Cannot find module 'D:\side-projects\my-portfolio-v2\.freebuff\worktrees\3b934058-5c07-4581-8b4f-772ec88fe52b\.next\transform.js'
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1517:15)
+      at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+      at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+      at Module._load (node:internal/modules/cjs/loader:1294:5)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+      at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+      at node:internal/main/run_main_module:33:47 {
+    code: 'MODULE_NOT_FOUND',
+  }
+  
+  Node.js v24.18.0]
+[Error: ENOENT: no such file or directory, open 'D:\side-projects\my-portfolio-v2\.freebuff\worktrees\3b934058-5c07-4581-8b4f-772ec88fe52b\.next\static\development\_buildManifest.js.tmp.23zg3hqsu66'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\side-projects\\my-portfolio-v2\\.freebuff\\worktrees\\3b934058-5c07-4581-8b4f-772ec88fe52b\\.next\\static\\development\\_buildManifest.js.tmp.23zg3hqsu66'
+}

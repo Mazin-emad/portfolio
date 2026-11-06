@@ -62,7 +62,11 @@
     "available": "Open to full-time roles and freelance projects",
     "stat1": "active users on Dar Al-Ruya",
     "stat2": "projects shipped",
-    "stat3": "languages, one codebase"
+    "stat3": "languages, one codebase",
+    "chip1": "Full-Stack",
+    "chip2": "Arabic · RTL",
+    "chip3": "Open to work",
+    "avatarAlt": "Stylized 3D portrait of Mazin Emad"
   },
   "featured": {
     "kicker": "Selected work",
@@ -76,10 +80,22 @@
     "kicker": "How I work",
     "title": "Built to be used, not just looked at.",
     "items": [
-      { "title": "Arabic-first, not translated", "body": "Layouts, type and interactions are designed for right-to-left reading from line one." },
-      { "title": "Fast by default", "body": "Server-rendered pages, lean bundles and real measurements — not guesses." },
-      { "title": "Full-stack ownership", "body": "From the database and auth to PDFs, admin panels and a polished interface." },
-      { "title": "Made to be managed", "body": "Admin panels and CMS tools so your team ships changes without a developer." }
+      {
+        "title": "Arabic-first, not translated",
+        "body": "Layouts, type and interactions are designed for right-to-left reading from line one."
+      },
+      {
+        "title": "Fast by default",
+        "body": "Server-rendered pages, lean bundles and real measurements — not guesses."
+      },
+      {
+        "title": "Full-stack ownership",
+        "body": "From the database and auth to PDFs, admin panels and a polished interface."
+      },
+      {
+        "title": "Made to be managed",
+        "body": "Admin panels and CMS tools so your team ships changes without a developer."
+      }
     ]
   },
   "cta": {
@@ -113,10 +129,22 @@
     "p2": "Right now I'm building Dar Al-Ruya, a Laravel platform serving 12K–16K active users, and I've just shipped the frontend of Elkhalily, a fully RTL e-commerce store. I work mostly with TypeScript, Next.js, Angular and Laravel.",
     "p3": "I learn fast, write things down, and care a lot about details that only show up when they're missing: spacing, focus states, loading time, Arabic typography.",
     "facts": [
-      { "label": "Based in", "value": "Egypt" },
-      { "label": "Education", "value": "EELU — Class of 2026" },
-      { "label": "Languages", "value": "Arabic, English" },
-      { "label": "Focus", "value": "Full-stack · RTL · Performance" }
+      {
+        "label": "Based in",
+        "value": "Egypt"
+      },
+      {
+        "label": "Education",
+        "value": "EELU — Class of 2026"
+      },
+      {
+        "label": "Languages",
+        "value": "Arabic, English"
+      },
+      {
+        "label": "Focus",
+        "value": "Full-stack · RTL · Performance"
+      }
     ],
     "cta": "See where I've worked"
   },
@@ -140,19 +168,49 @@
     "title": "What I can build for you.",
     "sub": "Practical help for teams that need a product shipped — and kept easy to run.",
     "items": [
-      { "title": "Web apps & storefronts", "body": "Fast, accessible interfaces in Next.js, React or Angular — from marketing sites to full e-commerce." },
-      { "title": "Full-stack platforms", "body": "Laravel or Node backends with SQL data models, authentication, roles, and PDF generation." },
-      { "title": "Admin panels & CMS", "body": "Back offices that let your team manage courses, products and content without touching code." },
-      { "title": "Arabic / RTL interfaces", "body": "Products designed for right-to-left from the start, with proper Arabic typography and bilingual support." },
-      { "title": "Performance & SEO", "body": "Measured improvements to speed, accessibility and search visibility — with before-and-after numbers." },
-      { "title": "Offline-first apps", "body": "PWAs that keep working without a connection and sync when it returns." }
+      {
+        "title": "Web apps & storefronts",
+        "body": "Fast, accessible interfaces in Next.js, React or Angular — from marketing sites to full e-commerce."
+      },
+      {
+        "title": "Full-stack platforms",
+        "body": "Laravel or Node backends with SQL data models, authentication, roles, and PDF generation."
+      },
+      {
+        "title": "Admin panels & CMS",
+        "body": "Back offices that let your team manage courses, products and content without touching code."
+      },
+      {
+        "title": "Arabic / RTL interfaces",
+        "body": "Products designed for right-to-left from the start, with proper Arabic typography and bilingual support."
+      },
+      {
+        "title": "Performance & SEO",
+        "body": "Measured improvements to speed, accessibility and search visibility — with before-and-after numbers."
+      },
+      {
+        "title": "Offline-first apps",
+        "body": "PWAs that keep working without a connection and sync when it returns."
+      }
     ],
     "processTitle": "How a project runs",
     "process": [
-      { "title": "Discover", "body": "We pin down the goal, users and constraints." },
-      { "title": "Design", "body": "Flows and screens, agreed before code." },
-      { "title": "Build", "body": "Weekly demos so you always see progress." },
-      { "title": "Launch & support", "body": "Deploy, measure, and keep improving." }
+      {
+        "title": "Discover",
+        "body": "We pin down the goal, users and constraints."
+      },
+      {
+        "title": "Design",
+        "body": "Flows and screens, agreed before code."
+      },
+      {
+        "title": "Build",
+        "body": "Weekly demos so you always see progress."
+      },
+      {
+        "title": "Launch & support",
+        "body": "Deploy, measure, and keep improving."
+      }
     ]
   },
   "contact": {

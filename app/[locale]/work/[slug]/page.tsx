@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getProject, projects, projectSlugs } from "@/content/projects";
 import type { Locale } from "@/content/types";
-import { BrowserFrame } from "@/components/work/DeviceFrame";
+import { DeviceShowcase } from "@/components/work/DeviceShowcase";
 import { Gallery } from "@/components/work/Gallery";
 import { FlowDiagram } from "@/components/work/FlowDiagram";
 import { Platforms } from "@/components/work/Platforms";
@@ -54,6 +54,18 @@ export default async function ProjectPage({ params }: Props) {
       : project.status === "in-progress"
         ? tc("statusProgress")
         : tc("statusPrivate");
+
+  // Screens for the floating devices: the cover first, then the project's own shots.
+  const desktopShots = [
+    project.cover,
+    ...project.shots.filter((s) => s.kind === "desktop").map((s) => s.src),
+  ]
+    .filter((src, i, all) => all.indexOf(src) === i)
+    .slice(0, 5);
+  const mobileShots = project.shots
+    .filter((s) => s.kind === "mobile")
+    .map((s) => s.src)
+    .slice(0, 4);
 
   const meta = [
     { k: tc("role"), v: project.role[l] },
@@ -145,12 +157,7 @@ export default async function ProjectPage({ params }: Props) {
 
         <div className="container-x mt-16">
           <Reveal y={40}>
-            <BrowserFrame
-              src={project.cover}
-              alt={project.title[l]}
-              priority
-              sizes="(min-width: 1240px) 1160px, 100vw"
-            />
+            <DeviceShowcase title={project.title[l]} desktop={desktopShots} mobile={mobileShots} />
           </Reveal>
         </div>
       </header>

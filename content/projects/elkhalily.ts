@@ -175,7 +175,7 @@ export const elkhalily: Project = {
       label: { en: "network requests (home, mobile)", ar: "طلبات الشبكة (الرئيسية، جوال)" },
     },
     {
-      value: "3.0s → 1.5s",
+      value: "3.0s → 1.1s",
       label: { en: "first contentful paint (mobile)", ar: "أول ظهور للمحتوى (جوال)" },
     },
     { value: "28", label: { en: "authorized brands", ar: "علامة تجارية معتمدة" } },

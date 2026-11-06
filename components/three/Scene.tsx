@@ -2,15 +2,7 @@
 
 import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Float, RoundedBox, useTexture } from "@react-three/drei";
-
-export type SceneMode = "particles" | "full";
-
-export interface DevicePair {
-  desktop: string;
-  mobile: string;
-}
+import { Canvas, useFrame } from "@react-three/fiber";
 
 /* ------------------------------------------------------------------ */
 /* Shared pointer state (window-level, so the canvas can stay inert)   */
@@ -139,111 +131,27 @@ function ParticleField({ light, count }: { light: boolean; count: { x: number; y
 }
 
 /* ------------------------------------------------------------------ */
-/* Floating laptop + phone mockups showing real project screenshots     */
-/* ------------------------------------------------------------------ */
-function Devices({ pairs, rtl }: { pairs: DevicePair[]; rtl: boolean }) {
-  const urls = useMemo(() => pairs.flatMap((p) => [p.desktop, p.mobile]), [pairs]);
-  const textures = useTexture(urls);
-  const group = useRef<THREE.Group>(null);
-  const pointer = usePointer();
-  const index = useRef(0);
-  const kick = useRef(0);
-  const clock = useRef(0);
-  const desktopMat = useRef<THREE.MeshBasicMaterial>(null);
-  const mobileMat = useRef<THREE.MeshBasicMaterial>(null);
-  const { size } = useThree();
-
-  useMemo(() => {
-    textures.forEach((t) => {
-      t.colorSpace = THREE.SRGBColorSpace;
-      t.anisotropy = 8;
-    });
-  }, [textures]);
-
-  useFrame((_, delta) => {
-    const g = group.current;
-    if (!g) return;
-    clock.current += delta;
-    if (clock.current > 5) {
-      clock.current = 0;
-      index.current = (index.current + 1) % pairs.length;
-      kick.current = 1;
-      if (desktopMat.current) desktopMat.current.map = textures[index.current * 2];
-      if (mobileMat.current) mobileMat.current.map = textures[index.current * 2 + 1];
-    }
-    kick.current *= Math.pow(0.02, delta);
-    const tx = pointer.current.x * 0.35 + (rtl ? 0.25 : -0.25) + kick.current * 0.9;
-    const ty = -pointer.current.y * 0.18;
-    g.rotation.y += (tx - g.rotation.y) * (1 - Math.pow(0.002, delta));
-    g.rotation.x += (ty - g.rotation.x) * (1 - Math.pow(0.002, delta));
-  });
-
-  // Keep the pair on the "free" side of the layout; scale with canvas width.
-  const s = Math.min(1, size.width / 1500) * 0.82;
-  const x = (rtl ? -1 : 1) * 2.55;
-
-  return (
-    <group position={[x, 0.1, 0]} scale={s}>
-      <group ref={group}>
-        <Float
-          speed={1.4}
-          rotationIntensity={0.15}
-          floatIntensity={0.9}
-          floatingRange={[-0.1, 0.12]}
-        >
-          {/* laptop screen slab */}
-          <RoundedBox args={[4.3, 2.72, 0.12]} radius={0.09} smoothness={4}>
-            <meshStandardMaterial color="#12141a" metalness={0.7} roughness={0.35} />
-          </RoundedBox>
-          <mesh position={[0, 0, 0.065]}>
-            <planeGeometry args={[4.1, 2.56]} />
-            <meshBasicMaterial ref={desktopMat} map={textures[0]} toneMapped={false} />
-          </mesh>
-          {/* phone */}
-          <group position={[rtl ? 2.35 : -2.35, -0.95, 0.7]} rotation={[0, rtl ? -0.18 : 0.18, 0]}>
-            <RoundedBox args={[1.12, 2.3, 0.12]} radius={0.15} smoothness={4}>
-              <meshStandardMaterial color="#0c0d10" metalness={0.8} roughness={0.3} />
-            </RoundedBox>
-            <mesh position={[0, 0, 0.065]}>
-              <planeGeometry args={[1.0, 2.16]} />
-              <meshBasicMaterial ref={mobileMat} map={textures[1]} toneMapped={false} />
-            </mesh>
-          </group>
-        </Float>
-      </group>
-    </group>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/* Scene                                                                */
+/* Scene: the full-bleed particle backdrop                              */
 /* ------------------------------------------------------------------ */
 export default function Scene({
-  mode,
   light,
-  rtl,
-  pairs,
+  dense,
   active,
 }: {
-  mode: SceneMode;
   light: boolean;
-  rtl: boolean;
-  pairs: DevicePair[];
+  dense: boolean;
   active: boolean;
 }) {
-  const count = mode === "full" ? { x: 120, y: 70 } : { x: 70, y: 44 };
+  const count = dense ? { x: 110, y: 64 } : { x: 70, y: 44 };
   return (
     <Canvas
-      dpr={[1, mode === "full" ? 1.75 : 1.25]}
+      dpr={[1, dense ? 1.5 : 1.25]}
       frameloop={active ? "always" : "never"}
       camera={{ position: [0, 0, 8], fov: 42 }}
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       style={{ pointerEvents: "none" }}
     >
-      <ambientLight intensity={0.6} />
-      <directionalLight position={[3, 4, 5]} intensity={1.2} />
       <ParticleField light={light} count={count} />
-      {mode === "full" && <Devices pairs={pairs} rtl={rtl} />}
     </Canvas>
   );
 }

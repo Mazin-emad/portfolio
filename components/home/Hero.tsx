@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { HeroScene } from "@/components/three/HeroScene";
-import { BrowserFrame, PhoneFrame } from "@/components/work/DeviceFrame";
+import { AvatarStage } from "@/components/home/AvatarStage";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -23,7 +23,7 @@ export function Hero() {
       />
       <HeroScene />
 
-      <div className="container-x relative grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="container-x relative grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <Reveal>
             <p className="label border-line bg-surface/60 inline-flex items-center gap-2.5 rounded-full border px-4 py-2 backdrop-blur">
@@ -35,7 +35,7 @@ export function Hero() {
             </p>
           </Reveal>
 
-          <h1 className="mt-8 text-[clamp(2.6rem,6.6vw,5.6rem)] font-semibold">
+          <h1 className="mt-8 text-[clamp(2.5rem,4.8vw,4.4rem)] font-semibold">
             <Reveal delay={0.05}>
               <span className="block">{t("line1")}</span>
             </Reveal>
@@ -73,27 +73,7 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Static device mockup: the fallback for reduced motion / no WebGL / small screens.
-            It stays in layout (hidden) while the 3D devices render, so nothing shifts. */}
-        <div
-          className="static-devices relative mx-auto w-full max-w-[560px] lg:max-w-none"
-          aria-hidden="false"
-        >
-          <div className="relative">
-            <BrowserFrame
-              src="/projects/alruaa/life-wheel-desktop.webp"
-              alt="Dar Al-Ruya platform"
-              priority
-              sizes="(min-width: 1024px) 560px, 92vw"
-            />
-            <PhoneFrame
-              src="/projects/elkhalily/home-mobile.webp"
-              alt="Elkhalily storefront on mobile"
-              className="absolute -end-2 -bottom-8 w-[28%] min-w-[96px] sm:-end-6"
-              sizes="160px"
-            />
-          </div>
-        </div>
+        <AvatarStage />
       </div>
     </section>
   );

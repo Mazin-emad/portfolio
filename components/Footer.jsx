@@ -22,7 +22,7 @@ const Footer = () => {
           <a target="_blank" href="https://x.com/MazinEmad685945">
             Twitter
           </a>
-          <a target="_blank" href="https://www.linkedin.com/in/mazin-emad10l10">
+          <a target="_blank" href="https://www.linkedin.com/in/mazin0emd">
             LinkedIn
           </a>
           <a target="_blank" href="https://github.com/Mazin-emad">

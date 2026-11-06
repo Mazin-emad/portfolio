@@ -19,7 +19,10 @@ function usePointer() {
   const target = useRef(new THREE.Vector2(0, 0));
   useEffect(() => {
     const onMove = (e: PointerEvent) => {
-      target.current.set((e.clientX / window.innerWidth) * 2 - 1, -((e.clientY / window.innerHeight) * 2 - 1));
+      target.current.set(
+        (e.clientX / window.innerWidth) * 2 - 1,
+        -((e.clientY / window.innerHeight) * 2 - 1),
+      );
     };
     window.addEventListener("pointermove", onMove, { passive: true });
     return () => window.removeEventListener("pointermove", onMove);
@@ -182,7 +185,12 @@ function Devices({ pairs, rtl }: { pairs: DevicePair[]; rtl: boolean }) {
   return (
     <group position={[x, 0.1, 0]} scale={s}>
       <group ref={group}>
-        <Float speed={1.4} rotationIntensity={0.15} floatIntensity={0.9} floatingRange={[-0.1, 0.12]}>
+        <Float
+          speed={1.4}
+          rotationIntensity={0.15}
+          floatIntensity={0.9}
+          floatingRange={[-0.1, 0.12]}
+        >
           {/* laptop screen slab */}
           <RoundedBox args={[4.3, 2.72, 0.12]} radius={0.09} smoothness={4}>
             <meshStandardMaterial color="#12141a" metalness={0.7} roughness={0.35} />

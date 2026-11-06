@@ -21,8 +21,14 @@ export function Gallery({ shots, title }: { shots: Shot[]; title: string }) {
     if (open === null) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(null);
-      if (e.key === "ArrowRight") setOpen((v) => (v === null ? v : (v + (locale === "ar" ? -1 : 1) + shots.length) % shots.length));
-      if (e.key === "ArrowLeft") setOpen((v) => (v === null ? v : (v + (locale === "ar" ? 1 : -1) + shots.length) % shots.length));
+      if (e.key === "ArrowRight")
+        setOpen((v) =>
+          v === null ? v : (v + (locale === "ar" ? -1 : 1) + shots.length) % shots.length,
+        );
+      if (e.key === "ArrowLeft")
+        setOpen((v) =>
+          v === null ? v : (v + (locale === "ar" ? 1 : -1) + shots.length) % shots.length,
+        );
     };
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
@@ -33,7 +39,8 @@ export function Gallery({ shots, title }: { shots: Shot[]; title: string }) {
   }, [open, shots.length, locale]);
 
   const current = open !== null ? shots[open] : null;
-  const step = (d: number) => setOpen((v) => (v === null ? v : (v + d + shots.length) % shots.length));
+  const step = (d: number) =>
+    setOpen((v) => (v === null ? v : (v + d + shots.length) % shots.length));
 
   return (
     <div>
@@ -51,7 +58,11 @@ export function Gallery({ shots, title }: { shots: Shot[]; title: string }) {
                   <BrowserFrame
                     src={s.src}
                     alt={`${title} — ${s.caption[locale]}`}
-                    sizes={n === 0 ? "(min-width: 1240px) 1160px, 100vw" : "(min-width: 768px) 570px, 100vw"}
+                    sizes={
+                      n === 0
+                        ? "(min-width: 1240px) 1160px, 100vw"
+                        : "(min-width: 768px) 570px, 100vw"
+                    }
                   />
                 </button>
                 <figcaption className="label mt-3">{s.caption[locale]}</figcaption>
@@ -146,7 +157,9 @@ export function Gallery({ shots, title }: { shots: Shot[]; title: string }) {
                   className="rounded-xl object-contain"
                 />
               </div>
-              <figcaption className="mt-3 text-center text-sm text-white/70">{current.caption[locale]}</figcaption>
+              <figcaption className="mt-3 text-center text-sm text-white/70">
+                {current.caption[locale]}
+              </figcaption>
             </figure>
           </motion.div>
         )}

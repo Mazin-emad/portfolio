@@ -59,7 +59,10 @@ export function Footer() {
       <div className="border-line border-t">
         <div className="container-x text-muted flex flex-col justify-between gap-2 py-6 text-xs sm:flex-row">
           <p>
-            © {year} {site.name}. {t("rights")}
+            <bdi dir="ltr">
+              © {year} {site.name}.
+            </bdi>{" "}
+            {t("rights")}
           </p>
           <p>{t("built")}</p>
         </div>

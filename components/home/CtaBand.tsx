@@ -13,7 +13,9 @@ export function CtaBand() {
             style={{ background: "radial-gradient(60% 80% at 50% 120%, var(--glow), transparent)" }}
             aria-hidden
           />
-          <h2 className="relative mx-auto max-w-3xl text-[clamp(2.25rem,6vw,4.75rem)] font-semibold">{t("title")}</h2>
+          <h2 className="relative mx-auto max-w-3xl text-[clamp(2.25rem,6vw,4.75rem)] font-semibold">
+            {t("title")}
+          </h2>
           <p className="text-muted relative mx-auto mt-6 max-w-xl text-lg">{t("sub")}</p>
           <div className="relative mt-10 flex justify-center">
             <ButtonLink href="/contact">{t("button")}</ButtonLink>

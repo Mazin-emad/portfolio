@@ -10,8 +10,26 @@ import { pageMetadata } from "@/lib/seo";
 type Props = { params: Promise<{ locale: string }> };
 
 const skills = {
-  frontend: ["Next.js", "React", "Angular", "TypeScript", "Tailwind CSS", "RxJS", "NgRx", "Vue.js", "RTL / Arabic UI"],
-  backend: ["Laravel", "PHP", "Artisan", "Node.js", "Express", ".NET API integration", "PDF generation"],
+  frontend: [
+    "Next.js",
+    "React",
+    "Angular",
+    "TypeScript",
+    "Tailwind CSS",
+    "RxJS",
+    "NgRx",
+    "Vue.js",
+    "RTL / Arabic UI",
+  ],
+  backend: [
+    "Laravel",
+    "PHP",
+    "Artisan",
+    "Node.js",
+    "Express",
+    ".NET API integration",
+    "PDF generation",
+  ],
   data: ["SQL", "MongoDB", "Supabase", "Firebase"],
   tools: ["Git", "Docker", "Figma", "PWA / IndexedDB", "Vercel", "Railway", "Claude"],
 } as const;
@@ -32,7 +50,14 @@ export default async function JourneyPage({ params }: Props) {
 
   const byYear = new Map<string, Entry[]>();
   const add = (year: string, e: Entry) => byYear.set(year, [...(byYear.get(year) ?? []), e]);
-  projects.forEach((p) => add(p.year.en.slice(0, 4), { title: p.title[l], kind: p.kind[l], role: p.role[l], href: `/work/${p.slug}` }));
+  projects.forEach((p) =>
+    add(p.year.en.slice(0, 4), {
+      title: p.title[l],
+      kind: p.kind[l],
+      role: p.role[l],
+      href: `/work/${p.slug}`,
+    }),
+  );
   archive.forEach((a) => add(a.year.slice(0, 4), { title: a.title, kind: a.kind[l] }));
   const years = [...byYear.keys()].sort((a, b) => Number(b) - Number(a));
 
@@ -42,11 +67,15 @@ export default async function JourneyPage({ params }: Props) {
 
       <ol className="mt-20">
         {years.map((year) => (
-          <Reveal as="li" key={year} className="border-line grid gap-6 border-t py-10 md:grid-cols-[180px_1fr]">
+          <Reveal
+            as="li"
+            key={year}
+            className="border-line grid gap-6 border-t py-10 md:grid-cols-[180px_1fr]"
+          >
             <p className="font-display text-5xl font-semibold" dir="ltr">
               {year}
             </p>
-            <ul className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
+            <ul className="border-line bg-line grid gap-px overflow-hidden rounded-2xl border sm:grid-cols-2">
               {byYear.get(year)!.map((e) => {
                 const body = (
                   <>
@@ -74,7 +103,10 @@ export default async function JourneyPage({ params }: Props) {
         ))}
       </ol>
 
-      <section className="border-line mt-12 grid gap-10 border-t py-16 lg:grid-cols-[180px_1fr]" aria-labelledby="skills">
+      <section
+        className="border-line mt-12 grid gap-10 border-t py-16 lg:grid-cols-[180px_1fr]"
+        aria-labelledby="skills"
+      >
         <h2 id="skills" className="label lg:pt-2">
           {t("skills")}
         </h2>
@@ -84,7 +116,10 @@ export default async function JourneyPage({ params }: Props) {
               <h3 className="text-xl font-semibold">{t(`groups.${g}`)}</h3>
               <ul className="mt-4 flex flex-wrap gap-2" dir="ltr">
                 {skills[g].map((s) => (
-                  <li key={s} className="border-line text-muted rounded-full border px-3 py-1 text-sm">
+                  <li
+                    key={s}
+                    className="border-line text-muted rounded-full border px-3 py-1 text-sm"
+                  >
                     {s}
                   </li>
                 ))}

@@ -22,14 +22,24 @@ export function BrowserFrame({
         className,
       )}
     >
-      <div className="border-line bg-surface-2 flex items-center gap-1.5 border-b px-3.5 py-2.5" aria-hidden>
+      <div
+        className="border-line bg-surface-2 flex items-center gap-1.5 border-b px-3.5 py-2.5"
+        aria-hidden
+      >
         <span className="bg-line-strong size-2.5 rounded-full" />
         <span className="bg-line-strong size-2.5 rounded-full" />
         <span className="bg-line-strong size-2.5 rounded-full" />
         <span className="bg-bg ms-3 h-4 flex-1 rounded-full" />
       </div>
       <div className="relative aspect-[1440/900]">
-        <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="object-cover object-top" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes={sizes}
+          priority={priority}
+          className="object-cover object-top"
+        />
       </div>
     </div>
   );
@@ -57,7 +67,14 @@ export function PhoneFrame({
       )}
     >
       <div className="relative aspect-[390/844] overflow-hidden rounded-[1.7rem]">
-        <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="object-cover object-top" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes={sizes}
+          priority={priority}
+          className="object-cover object-top"
+        />
       </div>
     </div>
   );

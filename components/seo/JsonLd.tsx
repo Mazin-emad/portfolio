@@ -19,7 +19,15 @@ export function personJsonLd() {
     email: `mailto:${site.email}`,
     nationality: "Egyptian",
     alumniOf: "Egyptian E-Learning University (EELU)",
-    knowsAbout: ["Laravel", "PHP", "Next.js", "React", "Angular", "TypeScript", "Arabic RTL interfaces"],
+    knowsAbout: [
+      "Laravel",
+      "PHP",
+      "Next.js",
+      "React",
+      "Angular",
+      "TypeScript",
+      "Arabic RTL interfaces",
+    ],
     sameAs: [site.github, site.linkedin, site.twitter],
   };
 }

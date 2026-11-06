@@ -17,7 +17,10 @@ export function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <div role="status" className="border-line bg-surface flex items-start gap-4 rounded-2xl border p-8">
+      <div
+        role="status"
+        className="border-line bg-surface flex items-start gap-4 rounded-2xl border p-8"
+      >
         <CheckCircle2 className="text-accent-text mt-1 shrink-0" aria-hidden />
         <p className="text-lg">{t("success")}</p>
       </div>
@@ -33,7 +36,14 @@ export function ContactForm() {
           <label htmlFor="name" className="label mb-2 block">
             {t("name")}
           </label>
-          <input id="name" name="name" autoComplete="name" required aria-invalid={err.name} className={field} />
+          <input
+            id="name"
+            name="name"
+            autoComplete="name"
+            required
+            aria-invalid={err.name}
+            className={field}
+          />
           {err.name && <p className="mt-2 text-sm text-red-500">{t("errName")}</p>}
         </div>
         <div>
@@ -57,12 +67,26 @@ export function ContactForm() {
         <label htmlFor="message" className="label mb-2 block">
           {t("message")}
         </label>
-        <textarea id="message" name="message" rows={6} required aria-invalid={err.message} className={cn(field, "resize-y")} />
+        <textarea
+          id="message"
+          name="message"
+          rows={6}
+          required
+          aria-invalid={err.message}
+          className={cn(field, "resize-y")}
+        />
         {err.message && <p className="mt-2 text-sm text-red-500">{t("errMessage")}</p>}
       </div>
 
       {/* Honeypot */}
-      <input type="text" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+      <input
+        type="text"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden
+      />
 
       <div className="flex flex-wrap items-center gap-5">
         <button

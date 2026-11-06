@@ -19,7 +19,12 @@ export async function generateMetadata({ params }: Props) {
   const { locale, slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
-  return pageMetadata({ locale, path: `/blog/${slug}`, title: post.title[locale as Locale], description: post.summary[locale as Locale] });
+  return pageMetadata({
+    locale,
+    path: `/blog/${slug}`,
+    title: post.title[locale as Locale],
+    description: post.summary[locale as Locale],
+  });
 }
 
 export default async function PostPage({ params }: Props) {
@@ -34,7 +39,10 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <article className="container-x pt-36">
-      <Link href="/blog" className="text-muted hover:text-fg inline-flex items-center gap-2 text-sm transition-colors">
+      <Link
+        href="/blog"
+        className="text-muted hover:text-fg inline-flex items-center gap-2 text-sm transition-colors"
+      >
         <ArrowLeft size={16} className="flip-rtl" aria-hidden />
         {tc("back")}
       </Link>

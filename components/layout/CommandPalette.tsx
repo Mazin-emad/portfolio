@@ -133,7 +133,9 @@ export function CommandPalette() {
   }, [items, query]);
 
   useEffect(() => {
-    listRef.current?.querySelector<HTMLElement>(`[data-index="${active}"]`)?.scrollIntoView({ block: "nearest" });
+    listRef.current
+      ?.querySelector<HTMLElement>(`[data-index="${active}"]`)
+      ?.scrollIntoView({ block: "nearest" });
   }, [active]);
 
   const onKeyDown = (e: React.KeyboardEvent) => {
@@ -161,7 +163,11 @@ export function CommandPalette() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.15 }}
         >
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={close} aria-hidden />
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={close}
+            aria-hidden
+          />
           <motion.div
             role="dialog"
             aria-modal="true"
@@ -186,15 +192,21 @@ export function CommandPalette() {
                 aria-label={t("placeholder")}
                 className="placeholder:text-muted h-14 flex-1 bg-transparent text-base outline-none"
               />
-              <kbd className="font-mono border-line text-muted rounded-md border px-1.5 text-[11px]">esc</kbd>
+              <kbd className="border-line text-muted rounded-md border px-1.5 font-mono text-[11px]">
+                esc
+              </kbd>
             </div>
             <ul ref={listRef} role="listbox" className="max-h-[50vh] overflow-y-auto p-2">
-              {filtered.length === 0 && <li className="text-muted px-3 py-8 text-center text-sm">{t("empty")}</li>}
+              {filtered.length === 0 && (
+                <li className="text-muted px-3 py-8 text-center text-sm">{t("empty")}</li>
+              )}
               {filtered.map((item, i) => {
                 const showGroup = i === 0 || filtered[i - 1].group !== item.group;
                 return (
                   <li key={item.id} role="presentation">
-                    {showGroup && <p className="label px-3 pt-3 pb-1.5">{groupLabel(item.group)}</p>}
+                    {showGroup && (
+                      <p className="label px-3 pt-3 pb-1.5">{groupLabel(item.group)}</p>
+                    )}
                     <button
                       type="button"
                       role="option"
@@ -210,7 +222,9 @@ export function CommandPalette() {
                       <span className={cn(i === active && "text-accent-text")}>{item.icon}</span>
                       <span className="flex-1">{item.label}</span>
                       {item.hint && <span className="label hidden sm:inline">{item.hint}</span>}
-                      {i === active && <CornerDownLeft size={14} className="text-muted" aria-hidden />}
+                      {i === active && (
+                        <CornerDownLeft size={14} className="text-muted" aria-hidden />
+                      )}
                     </button>
                   </li>
                 );

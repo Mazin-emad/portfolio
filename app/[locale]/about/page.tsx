@@ -48,7 +48,7 @@ export default async function AboutPage({ params }: Props) {
             ))}
           </div>
 
-          <dl className="border-line mt-12 grid gap-px overflow-hidden rounded-2xl border bg-line sm:grid-cols-2">
+          <dl className="border-line bg-line mt-12 grid gap-px overflow-hidden rounded-2xl border sm:grid-cols-2">
             {facts.map((f) => (
               <div key={f.label} className="bg-bg p-6">
                 <dt className="label">{f.label}</dt>

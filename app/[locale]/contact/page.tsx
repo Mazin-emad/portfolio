@@ -38,7 +38,11 @@ export default async function ContactPage({ params }: Props) {
           <aside className="grid content-start gap-10">
             <div>
               <p className="label mb-3">{t("direct")}</p>
-              <a href={`mailto:${site.email}`} className="link-u font-display text-xl font-medium sm:text-2xl" dir="ltr">
+              <a
+                href={`mailto:${site.email}`}
+                className="link-u font-display text-xl font-medium sm:text-2xl"
+                dir="ltr"
+              >
                 {site.email}
               </a>
             </div>

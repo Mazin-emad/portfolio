@@ -17,7 +17,7 @@ export function Hero() {
     <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16">
       <div className="bg-grid absolute inset-0 -z-10" aria-hidden />
       <div
-        className="absolute -top-40 start-1/2 -z-10 h-[520px] w-[820px] -translate-x-1/2 rounded-full blur-3xl rtl:translate-x-1/2"
+        className="absolute start-1/2 -top-40 -z-10 h-[520px] w-[820px] -translate-x-1/2 rounded-full blur-3xl rtl:translate-x-1/2"
         style={{ background: "radial-gradient(closest-side, var(--glow), transparent)" }}
         aria-hidden
       />
@@ -45,7 +45,9 @@ export function Hero() {
           </h1>
 
           <Reveal delay={0.2}>
-            <p className="text-muted mt-8 max-w-xl text-lg leading-relaxed sm:text-xl">{t("sub")}</p>
+            <p className="text-muted mt-8 max-w-xl text-lg leading-relaxed sm:text-xl">
+              {t("sub")}
+            </p>
           </Reveal>
 
           <Reveal delay={0.28}>
@@ -73,7 +75,10 @@ export function Hero() {
 
         {/* Static device mockup: the fallback for reduced motion / no WebGL / small screens.
             It stays in layout (hidden) while the 3D devices render, so nothing shifts. */}
-        <div className="static-devices relative mx-auto w-full max-w-[560px] lg:max-w-none" aria-hidden="false">
+        <div
+          className="static-devices relative mx-auto w-full max-w-[560px] lg:max-w-none"
+          aria-hidden="false"
+        >
           <div className="relative">
             <BrowserFrame
               src="/projects/alruaa/life-wheel-desktop.webp"
@@ -84,7 +89,7 @@ export function Hero() {
             <PhoneFrame
               src="/projects/elkhalily/home-mobile.webp"
               alt="Elkhalily storefront on mobile"
-              className="absolute -bottom-8 w-[28%] min-w-[96px] -end-2 sm:-end-6"
+              className="absolute -end-2 -bottom-8 w-[28%] min-w-[96px] sm:-end-6"
               sizes="160px"
             />
           </div>

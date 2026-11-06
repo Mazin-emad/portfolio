@@ -12,7 +12,11 @@ import { LangSwitch } from "./LangSwitch";
 
 export function Logo({ className }: { className?: string }) {
   return (
-    <Link href="/" aria-label="Mazin Emad" className={cn("font-display text-2xl font-bold", className)}>
+    <Link
+      href="/"
+      aria-label="Mazin Emad"
+      className={cn("font-display text-2xl font-bold", className)}
+    >
       <span dir="ltr" className="inline-flex items-baseline">
         Mazin<span className="text-accent-text">.</span>
       </span>
@@ -52,7 +56,9 @@ export function Header() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
-        scrolled || open ? "border-line bg-bg/80 border-b backdrop-blur-xl" : "border-b border-transparent",
+        scrolled || open
+          ? "border-line bg-bg/80 border-b backdrop-blur-xl"
+          : "border-b border-transparent",
       )}
     >
       <div className="container-x flex h-[72px] items-center justify-between gap-4">
@@ -83,7 +89,7 @@ export function Header() {
           >
             <Search size={15} aria-hidden />
             <span className="hidden xl:inline">{tc("open")}</span>
-            <kbd className="font-mono border-line rounded-md border px-1.5 text-[11px]" dir="ltr">
+            <kbd className="border-line rounded-md border px-1.5 font-mono text-[11px]" dir="ltr">
               ⌘K
             </kbd>
           </button>

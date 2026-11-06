@@ -29,7 +29,10 @@ export default async function BlogPage({ params }: Props) {
       <ul className="border-line mt-16 border-t">
         {posts.map((p, i) => (
           <Reveal as="li" key={p.slug} delay={i * 0.05} className="border-line border-b">
-            <Link href={`/blog/${p.slug}`} className="group hover:bg-surface flex items-start justify-between gap-6 px-2 py-8 transition-colors sm:px-4">
+            <Link
+              href={`/blog/${p.slug}`}
+              className="group hover:bg-surface flex items-start justify-between gap-6 px-2 py-8 transition-colors sm:px-4"
+            >
               <div>
                 <p className="label mb-3">
                   {fmt.format(new Date(p.date))} · {p.minutes} {tc("minRead")}
@@ -37,7 +40,10 @@ export default async function BlogPage({ params }: Props) {
                 <h2 className="text-2xl font-semibold sm:text-3xl">{p.title[l]}</h2>
                 <p className="text-muted mt-2 max-w-2xl">{p.summary[l]}</p>
               </div>
-              <ArrowUpRight className="text-muted group-hover:text-accent-text mt-2 shrink-0 transition-colors flip-rtl" aria-hidden />
+              <ArrowUpRight
+                className="text-muted group-hover:text-accent-text flip-rtl mt-2 shrink-0 transition-colors"
+                aria-hidden
+              />
             </Link>
           </Reveal>
         ))}

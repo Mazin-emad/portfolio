@@ -9,8 +9,14 @@ const Scene = dynamic(() => import("./Scene"), { ssr: false });
 
 /** Real screenshots used on the floating 3D devices. */
 const pairs = [
-  { desktop: "/projects/alruaa/life-wheel-desktop.webp", mobile: "/projects/alruaa/home-mobile.webp" },
-  { desktop: "/projects/elkhalily/hero-desktop.webp", mobile: "/projects/elkhalily/home-mobile.webp" },
+  {
+    desktop: "/projects/alruaa/life-wheel-desktop.webp",
+    mobile: "/projects/alruaa/home-mobile.webp",
+  },
+  {
+    desktop: "/projects/elkhalily/hero-desktop.webp",
+    mobile: "/projects/elkhalily/home-mobile.webp",
+  },
 ];
 
 function canWebGL() {
@@ -41,7 +47,8 @@ export function HeroScene() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
     const wide = window.matchMedia("(min-width: 1024px)");
     const decide = () => {
-      const next: SceneMode | "none" = reduce.matches || !canWebGL() ? "none" : wide.matches ? "full" : "particles";
+      const next: SceneMode | "none" =
+        reduce.matches || !canWebGL() ? "none" : wide.matches ? "full" : "particles";
       setMode(next);
       document.documentElement.dataset.scene = next;
     };
@@ -78,7 +85,13 @@ export function HeroScene() {
   return (
     <div ref={ref} aria-hidden className="pointer-events-none absolute inset-0">
       {mode !== "none" && (
-        <Scene mode={mode} light={light} rtl={locale === "ar"} pairs={pairs} active={inView && tabVisible} />
+        <Scene
+          mode={mode}
+          light={light}
+          rtl={locale === "ar"}
+          pairs={pairs}
+          active={inView && tabVisible}
+        />
       )}
     </div>
   );

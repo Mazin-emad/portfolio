@@ -47,7 +47,11 @@ export default async function ProjectPage({ params }: Props) {
   const idx = projects.findIndex((p) => p.slug === slug);
   const next = projects[(idx + 1) % projects.length];
   const status =
-    project.status === "live" ? tc("statusLive") : project.status === "in-progress" ? tc("statusProgress") : tc("statusPrivate");
+    project.status === "live"
+      ? tc("statusLive")
+      : project.status === "in-progress"
+        ? tc("statusProgress")
+        : tc("statusPrivate");
 
   const meta = [
     { k: tc("role"), v: project.role[l] },
@@ -75,11 +79,16 @@ export default async function ProjectPage({ params }: Props) {
       <header className="relative isolate overflow-hidden pt-32 pb-16 sm:pt-40">
         <div
           className="absolute inset-x-0 top-0 -z-10 h-[620px]"
-          style={{ background: `radial-gradient(55% 60% at 50% 0%, ${project.hue}30, transparent 72%)` }}
+          style={{
+            background: `radial-gradient(55% 60% at 50% 0%, ${project.hue}30, transparent 72%)`,
+          }}
           aria-hidden
         />
         <div className="container-x">
-          <Link href="/work" className="text-muted hover:text-fg inline-flex items-center gap-2 text-sm transition-colors">
+          <Link
+            href="/work"
+            className="text-muted hover:text-fg inline-flex items-center gap-2 text-sm transition-colors"
+          >
             <ArrowLeft size={16} className="flip-rtl" aria-hidden />
             {tc("back")}
           </Link>
@@ -113,12 +122,18 @@ export default async function ProjectPage({ params }: Props) {
                 </ExternalLink>
               )}
               {project.links.live && project.links.liveNote && (
-                <span className="text-muted border-line rounded-full border px-5 py-2.5 text-sm">{project.links.liveNote[l]}</span>
+                <span className="text-muted border-line rounded-full border px-5 py-2.5 text-sm">
+                  {project.links.liveNote[l]}
+                </span>
               )}
               {!project.links.live && project.links.liveNote && (
-                <span className="text-muted border-line rounded-full border px-5 py-2.5 text-sm">{project.links.liveNote[l]}</span>
+                <span className="text-muted border-line rounded-full border px-5 py-2.5 text-sm">
+                  {project.links.liveNote[l]}
+                </span>
               )}
-              {project.links.github && <ExternalLink href={project.links.github}>{tc("sourceCode")}</ExternalLink>}
+              {project.links.github && (
+                <ExternalLink href={project.links.github}>{tc("sourceCode")}</ExternalLink>
+              )}
               {!project.links.github && project.links.sourceNote && (
                 <span className="text-muted text-sm">{project.links.sourceNote[l]}</span>
               )}
@@ -128,7 +143,12 @@ export default async function ProjectPage({ params }: Props) {
 
         <div className="container-x mt-16">
           <Reveal y={40}>
-            <BrowserFrame src={project.cover} alt={project.title[l]} priority sizes="(min-width: 1240px) 1160px, 100vw" />
+            <BrowserFrame
+              src={project.cover}
+              alt={project.title[l]}
+              priority
+              sizes="(min-width: 1240px) 1160px, 100vw"
+            />
           </Reveal>
         </div>
       </header>
@@ -136,19 +156,27 @@ export default async function ProjectPage({ params }: Props) {
       {/* Numbers */}
       {project.stats && (
         <section className="container-x py-12" aria-label={t("numbers")}>
-          <dl
-            className="border-line grid grid-cols-2 gap-px overflow-hidden rounded-3xl border bg-line lg:grid-cols-[repeat(var(--n),minmax(0,1fr))]"
-            style={{ "--n": project.stats.length } as React.CSSProperties}
-          >
-            {project.stats.map((s) => (
-              <Reveal key={s.value + s.label.en} className="bg-bg p-6 sm:p-8 [&:last-child:nth-child(odd)]:col-span-2 lg:[&:last-child:nth-child(odd)]:col-span-1">
-                <dt className="font-display text-[clamp(1.5rem,2.8vw,2.5rem)] font-semibold whitespace-nowrap" dir="ltr">
-                  {s.value}
-                </dt>
-                <dd className="text-muted mt-2 text-sm">{s.label[l]}</dd>
-              </Reveal>
-            ))}
-          </dl>
+          <Reveal>
+            <dl
+              className="border-line bg-line grid grid-cols-2 gap-px overflow-hidden rounded-3xl border lg:grid-cols-[repeat(var(--n),minmax(0,1fr))]"
+              style={{ "--n": project.stats.length } as React.CSSProperties}
+            >
+              {project.stats.map((s) => (
+                <div
+                  key={s.value + s.label.en}
+                  className="bg-bg p-6 sm:p-8 [&:last-child:nth-child(odd)]:col-span-2 lg:[&:last-child:nth-child(odd)]:col-span-1"
+                >
+                  <dt
+                    className="font-display text-[clamp(1.5rem,2.8vw,2.5rem)] font-semibold whitespace-nowrap"
+                    dir="ltr"
+                  >
+                    {s.value}
+                  </dt>
+                  <dd className="text-muted mt-2 text-sm">{s.label[l]}</dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
         </section>
       )}
 
@@ -167,15 +195,19 @@ export default async function ProjectPage({ params }: Props) {
       {/* What I built */}
       <section className="container-x py-12">
         <p className="label mb-8">{t("built")}</p>
-        <ul className="grid gap-px overflow-hidden rounded-3xl border border-line bg-line md:grid-cols-2">
-          {project.highlights[l].map((h, i) => (
-            <Reveal as="li" key={h.title} delay={(i % 2) * 0.05} className="bg-bg p-7 sm:p-9 md:[&:last-child:nth-child(odd)]:col-span-2">
-              <span className="label">0{i + 1}</span>
-              <h3 className="mt-4 text-xl font-semibold sm:text-2xl">{h.title}</h3>
-              <p className="text-muted mt-3">{h.body}</p>
-            </Reveal>
-          ))}
-        </ul>
+        <Reveal>
+          <ul className="border-line bg-line grid gap-px overflow-hidden rounded-3xl border md:grid-cols-2">
+            {project.highlights[l].map((h) => (
+              <li
+                key={h.title}
+                className="bg-bg p-7 sm:p-9 md:[&:last-child:nth-child(odd)]:col-span-2"
+              >
+                <h3 className="text-xl font-semibold sm:text-2xl">{h.title}</h3>
+                <p className="text-muted mt-3">{h.body}</p>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </section>
 
       {/* Technical notes */}
@@ -184,7 +216,7 @@ export default async function ProjectPage({ params }: Props) {
           <p className="label lg:pt-2">{t("decisions")}</p>
           <ul className="space-y-10">
             {project.decisions[l].map((d) => (
-              <Reveal as="li" key={d.title} className="border-line border-s-2 ps-6" >
+              <Reveal as="li" key={d.title} className="border-line border-s-2 ps-6">
                 <h3 className="text-xl font-semibold">{d.title}</h3>
                 <p className="text-muted mt-2">{d.body}</p>
               </Reveal>

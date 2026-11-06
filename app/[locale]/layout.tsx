@@ -11,7 +11,11 @@ import { Footer } from "@/components/layout/Footer";
 import { CommandPalette } from "@/components/layout/CommandPalette";
 import "../globals.css";
 
-const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--fd-latin", display: "swap" });
+const display = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--fd-latin",
+  display: "swap",
+});
 const sans = Geist({ subsets: ["latin"], variable: "--fs-latin", display: "swap" });
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--fm-latin", display: "swap" });
 const arabic = IBM_Plex_Sans_Arabic({
@@ -32,7 +36,11 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
   return {

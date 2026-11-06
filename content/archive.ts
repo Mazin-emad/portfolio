@@ -52,7 +52,7 @@ export const archive: ArchiveItem[] = [
     },
     stack: ["Next.js", "Tailwind CSS", "Framer Motion"],
     image: "/raizero.png",
-    live: "https://raizero.com",
+    live: "https://raizero.vercel.app/",
   },
   {
     title: "Anime Frog",
@@ -105,7 +105,7 @@ export const archive: ArchiveItem[] = [
     },
     stack: ["React", "CSS Modules", "Framer Motion"],
     image: "/assuit-motorsport.png",
-    live: "https://assiut-motorsport.netlify.app/",
+    live: "https://assiut-motorsport.vercel.app/",
   },
   {
     title: "Budget App",

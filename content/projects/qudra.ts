@@ -41,7 +41,6 @@ export const qudra: Project = {
   stack: ["React", "Tailwind CSS", "shadcn/ui", "Figma"],
   links: {
     live: "https://qudra-web.vercel.app/",
-    liveNote: { en: "Demo offline — backend server is down", ar: "العرض متوقف — خادم الباك إند غير متاح" },
     sourceNote: { en: "Private repository", ar: "مستودع خاص" },
   },
   cover: "/qudra/landing.png",

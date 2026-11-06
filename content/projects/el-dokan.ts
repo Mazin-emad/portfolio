@@ -28,14 +28,29 @@ export const elDokan: Project = {
   },
   highlights: {
     en: [
-      { title: "Complete shopping flow", body: "Product catalog, cart, checkout, authentication, wishlist and account pages." },
-      { title: "Reactive architecture", body: "Routing, reactive forms and RxJS-based state patterns for a maintainable codebase." },
+      {
+        title: "Complete shopping flow",
+        body: "Product catalog, cart, checkout, authentication, wishlist and account pages.",
+      },
+      {
+        title: "Reactive architecture",
+        body: "Routing, reactive forms and RxJS-based state patterns for a maintainable codebase.",
+      },
       { title: "Reusable UI components", body: "Scalable components on Angular Material." },
     ],
     ar: [
-      { title: "رحلة تسوّق كاملة", body: "كتالوج المنتجات والسلة والدفع والمصادقة والمفضلة وصفحات الحساب." },
-      { title: "معمارية تفاعلية", body: "توجيه ونماذج تفاعلية وأنماط إدارة حالة بـ RxJS لكود قابل للصيانة." },
-      { title: "مكوّنات واجهة قابلة لإعادة الاستخدام", body: "مكوّنات قابلة للتوسّع على Angular Material." },
+      {
+        title: "رحلة تسوّق كاملة",
+        body: "كتالوج المنتجات والسلة والدفع والمصادقة والمفضلة وصفحات الحساب.",
+      },
+      {
+        title: "معمارية تفاعلية",
+        body: "توجيه ونماذج تفاعلية وأنماط إدارة حالة بـ RxJS لكود قابل للصيانة.",
+      },
+      {
+        title: "مكوّنات واجهة قابلة لإعادة الاستخدام",
+        body: "مكوّنات قابلة للتوسّع على Angular Material.",
+      },
     ],
   },
   stack: ["Angular", "TypeScript", "RxJS", "Angular Material", ".NET Web API", "REST APIs"],
@@ -47,8 +62,16 @@ export const elDokan: Project = {
   cover: "/el-dokan/home.png",
   shots: [
     { src: "/el-dokan/home.png", kind: "desktop", caption: { en: "Home", ar: "الرئيسية" } },
-    { src: "/el-dokan/home2.png", kind: "desktop", caption: { en: "Home — featured", ar: "الرئيسية — المميز" } },
-    { src: "/el-dokan/home3.png", kind: "desktop", caption: { en: "Home — categories", ar: "الرئيسية — الأقسام" } },
+    {
+      src: "/el-dokan/home2.png",
+      kind: "desktop",
+      caption: { en: "Home — featured", ar: "الرئيسية — المميز" },
+    },
+    {
+      src: "/el-dokan/home3.png",
+      kind: "desktop",
+      caption: { en: "Home — categories", ar: "الرئيسية — الأقسام" },
+    },
     { src: "/el-dokan/cart.png", kind: "desktop", caption: { en: "Cart", ar: "السلة" } },
     { src: "/el-dokan/checkout.png", kind: "desktop", caption: { en: "Checkout", ar: "الدفع" } },
     { src: "/el-dokan/login.png", kind: "desktop", caption: { en: "Login", ar: "تسجيل الدخول" } },

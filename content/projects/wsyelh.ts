@@ -28,10 +28,22 @@ export const wsyelh: Project = {
   },
   highlights: {
     en: [
-      { title: "Dynamic exam generation", body: "Educators prepare exams from within the platform." },
-      { title: "Upload and correction", body: "A dedicated flow to upload exam papers and review their correction." },
-      { title: "Classes and reports", body: "Class management plus automated PDF reports generated with React PDF." },
-      { title: "Dashboard", body: "A clear overview of exams, classes and results for each educator." },
+      {
+        title: "Dynamic exam generation",
+        body: "Educators prepare exams from within the platform.",
+      },
+      {
+        title: "Upload and correction",
+        body: "A dedicated flow to upload exam papers and review their correction.",
+      },
+      {
+        title: "Classes and reports",
+        body: "Class management plus automated PDF reports generated with React PDF.",
+      },
+      {
+        title: "Dashboard",
+        body: "A clear overview of exams, classes and results for each educator.",
+      },
     ],
     ar: [
       { title: "توليد اختبارات ديناميكي", body: "يُعدّ المعلمون الاختبارات من داخل المنصة." },
@@ -47,11 +59,27 @@ export const wsyelh: Project = {
   },
   cover: "/wsyelh/dashboard.jpeg",
   shots: [
-    { src: "/wsyelh/dashboard.jpeg", kind: "desktop", caption: { en: "Dashboard", ar: "لوحة المعلومات" } },
+    {
+      src: "/wsyelh/dashboard.jpeg",
+      kind: "desktop",
+      caption: { en: "Dashboard", ar: "لوحة المعلومات" },
+    },
     { src: "/wsyelh/exams.jpeg", kind: "desktop", caption: { en: "Exams", ar: "الاختبارات" } },
-    { src: "/wsyelh/preparing-exam.jpeg", kind: "desktop", caption: { en: "Preparing an exam", ar: "تحضير اختبار" } },
-    { src: "/wsyelh/upload-exam.jpeg", kind: "desktop", caption: { en: "Uploading papers", ar: "رفع الأوراق" } },
-    { src: "/wsyelh/corection.jpeg", kind: "desktop", caption: { en: "Correction", ar: "التصحيح" } },
+    {
+      src: "/wsyelh/preparing-exam.jpeg",
+      kind: "desktop",
+      caption: { en: "Preparing an exam", ar: "تحضير اختبار" },
+    },
+    {
+      src: "/wsyelh/upload-exam.jpeg",
+      kind: "desktop",
+      caption: { en: "Uploading papers", ar: "رفع الأوراق" },
+    },
+    {
+      src: "/wsyelh/corection.jpeg",
+      kind: "desktop",
+      caption: { en: "Correction", ar: "التصحيح" },
+    },
     { src: "/wsyelh/classes.jpeg", kind: "desktop", caption: { en: "Classes", ar: "الفصول" } },
     { src: "/wsyelh/reports.jpeg", kind: "desktop", caption: { en: "Reports", ar: "التقارير" } },
     { src: "/wsyelh/login.jpeg", kind: "desktop", caption: { en: "Login", ar: "تسجيل الدخول" } },

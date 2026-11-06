@@ -213,3 +213,30 @@ p {
 [data-scene="full"] .static-devices {
   visibility: hidden;
 }
+
+/* Order-flow diagram connectors (logical properties keep them correct in RTL). */
+.flow-step {
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .flow-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 1.5rem;
+    inset-inline-start: calc(50% + 2rem);
+    inline-size: calc(100% - 4rem);
+    block-size: 1px;
+    background: var(--line-strong);
+  }
+}
+@media (max-width: 1023px) {
+  .flow-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 1.5rem;
+    top: 3.5rem;
+    block-size: calc(100% - 2.5rem);
+    inline-size: 1px;
+    background: var(--line-strong);
+  }
+}

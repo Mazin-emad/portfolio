@@ -7,6 +7,8 @@ import { getProject, projects, projectSlugs } from "@/content/projects";
 import type { Locale } from "@/content/types";
 import { BrowserFrame } from "@/components/work/DeviceFrame";
 import { Gallery } from "@/components/work/Gallery";
+import { FlowDiagram } from "@/components/work/FlowDiagram";
+import { Platforms } from "@/components/work/Platforms";
 import { ProjectCard } from "@/components/work/ProjectCard";
 import { ButtonLink, ExternalLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
@@ -191,6 +193,18 @@ export default async function ProjectPage({ params }: Props) {
           ))}
         </div>
       </section>
+
+      {/* Flow / platforms diagrams (optional per project) */}
+      {project.flow && (
+        <section className="container-x py-20">
+          <FlowDiagram flow={project.flow} locale={l} />
+        </section>
+      )}
+      {project.platforms && (
+        <section className="container-x py-20">
+          <Platforms data={project.platforms} locale={l} />
+        </section>
+      )}
 
       {/* What I built */}
       <section className="container-x py-12">

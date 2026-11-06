@@ -86,18 +86,69 @@ export const darAlRuya: Project = {
   },
   cover: `${p}/life-wheel-desktop.webp`,
   shots: [
-    { src: `${p}/life-wheel-desktop.webp`, kind: "desktop", caption: { en: "Landing page — the Life Wheel", ar: "الصفحة الرئيسية — عجلة الحياة" } },
-    { src: `${p}/home-mobile.webp`, kind: "mobile", caption: { en: "Landing page on mobile", ar: "الصفحة الرئيسية على الجوال" } },
-    { src: `${p}/courses-desktop.webp`, kind: "desktop", caption: { en: "Courses", ar: "الدورات" } },
-    { src: `${p}/courses-list-desktop.webp`, kind: "desktop", caption: { en: "Course cards with dates, hours and accreditation", ar: "بطاقات الدورات بالتواريخ والساعات والاعتماد" } },
-    { src: `${p}/courses-mobile.webp`, kind: "mobile", caption: { en: "Courses on mobile", ar: "الدورات على الجوال" } },
-    { src: `${p}/perception-desktop.webp`, kind: "desktop", caption: { en: "Perception styles assessment", ar: "اختبار أنماط الإدراك" } },
-    { src: `${p}/seven-keys-desktop.webp`, kind: "desktop", caption: { en: "Seven Personality Keys", ar: "مفاتيح الشخصية السبعة" } },
-    { src: `${p}/quick-challenge-desktop.webp`, kind: "desktop", caption: { en: "Quick challenge", ar: "التحدي السريع" } },
-    { src: `${p}/services-desktop.webp`, kind: "desktop", caption: { en: "Services and accreditations", ar: "الخدمات والاعتمادات" } },
-    { src: `${p}/testimonials-desktop.webp`, kind: "desktop", caption: { en: "Trainee testimonials", ar: "آراء المتدربين" } },
-    { src: `${p}/partners-desktop.webp`, kind: "desktop", caption: { en: "Partners and footer", ar: "الشركاء والتذييل" } },
-    { src: `${p}/life-wheel-page-desktop.webp`, kind: "desktop", caption: { en: "Life Wheel explainer", ar: "شرح عجلة الحياة" } },
+    {
+      src: `${p}/life-wheel-desktop.webp`,
+      kind: "desktop",
+      caption: { en: "Landing page — the Life Wheel", ar: "الصفحة الرئيسية — عجلة الحياة" },
+    },
+    {
+      src: `${p}/home-mobile.webp`,
+      kind: "mobile",
+      caption: { en: "Landing page on mobile", ar: "الصفحة الرئيسية على الجوال" },
+    },
+    {
+      src: `${p}/courses-desktop.webp`,
+      kind: "desktop",
+      caption: { en: "Courses", ar: "الدورات" },
+    },
+    {
+      src: `${p}/courses-list-desktop.webp`,
+      kind: "desktop",
+      caption: {
+        en: "Course cards with dates, hours and accreditation",
+        ar: "بطاقات الدورات بالتواريخ والساعات والاعتماد",
+      },
+    },
+    {
+      src: `${p}/courses-mobile.webp`,
+      kind: "mobile",
+      caption: { en: "Courses on mobile", ar: "الدورات على الجوال" },
+    },
+    {
+      src: `${p}/perception-desktop.webp`,
+      kind: "desktop",
+      caption: { en: "Perception styles assessment", ar: "اختبار أنماط الإدراك" },
+    },
+    {
+      src: `${p}/seven-keys-desktop.webp`,
+      kind: "desktop",
+      caption: { en: "Seven Personality Keys", ar: "مفاتيح الشخصية السبعة" },
+    },
+    {
+      src: `${p}/quick-challenge-desktop.webp`,
+      kind: "desktop",
+      caption: { en: "Quick challenge", ar: "التحدي السريع" },
+    },
+    {
+      src: `${p}/services-desktop.webp`,
+      kind: "desktop",
+      caption: { en: "Services and accreditations", ar: "الخدمات والاعتمادات" },
+    },
+    {
+      src: `${p}/testimonials-desktop.webp`,
+      kind: "desktop",
+      caption: { en: "Trainee testimonials", ar: "آراء المتدربين" },
+    },
+    {
+      src: `${p}/partners-desktop.webp`,
+      kind: "desktop",
+      caption: { en: "Partners and footer", ar: "الشركاء والتذييل" },
+    },
+    {
+      src: `${p}/life-wheel-page-desktop.webp`,
+      kind: "desktop",
+      caption: { en: "Life Wheel explainer", ar: "شرح عجلة الحياة" },
+    },
     { src: `${p}/login-mobile.webp`, kind: "mobile", caption: { en: "Login", ar: "تسجيل الدخول" } },
   ],
 };

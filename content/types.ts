@@ -22,6 +22,19 @@ export interface Project {
   highlights: L<{ title: string; body: string }[]>;
   decisions?: L<{ title: string; body: string }[]>;
   stats?: { value: string; label: L<string> }[];
+  /** "One system, N platforms" block (e.g. web + mobile + desktop on one backend). */
+  platforms?: {
+    title: L<string>;
+    sub?: L<string>;
+    items: { icon: "web" | "mobile" | "desktop"; name: L<string>; tech: string; note: L<string> }[];
+    base: { label: L<string>; tech: string };
+  };
+  /** Pipeline diagram (e.g. an order moving through payment, shipping and admin). */
+  flow?: {
+    title: L<string>;
+    sub: L<string>;
+    steps: { label: L<string>; note: L<string> }[];
+  };
   stack: string[];
   links: {
     live?: string;

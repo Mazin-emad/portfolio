@@ -26,7 +26,10 @@ export const archive: ArchiveItem[] = [
     stack: ["Next.js", "Tailwind CSS", "Context API"],
     image: "/tgmi3ah.png",
     live: "https://tagmi3ah.vercel.app/",
-    liveNote: { en: "Demo offline — database is down", ar: "العرض متوقف — قاعدة البيانات غير متاحة" },
+    liveNote: {
+      en: "Demo offline — database is down",
+      ar: "العرض متوقف — قاعدة البيانات غير متاحة",
+    },
     github: `${gh}/tagmi3ah`,
   },
   {
@@ -92,7 +95,10 @@ export const archive: ArchiveItem[] = [
     stack: ["Vue.js", "TypeScript", "Node.js", "MongoDB"],
     image: "/job-killers.png",
     live: "https://job-killers.vercel.app/",
-    liveNote: { en: "Demo offline — database is down", ar: "العرض متوقف — قاعدة البيانات غير متاحة" },
+    liveNote: {
+      en: "Demo offline — database is down",
+      ar: "العرض متوقف — قاعدة البيانات غير متاحة",
+    },
     github: `${gh}/job-killers`,
   },
   {

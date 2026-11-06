@@ -28,13 +28,25 @@ export const qudra: Project = {
   },
   highlights: {
     en: [
-      { title: "Question-based assessment", body: "Interactive question screens that adapt the experience to each child." },
-      { title: "Reusable, scalable components", body: "A component library built on shadcn/ui and Tailwind CSS." },
-      { title: "Smooth API integration", body: "Reliable integration with the backend for a stable user experience." },
+      {
+        title: "Question-based assessment",
+        body: "Interactive question screens that adapt the experience to each child.",
+      },
+      {
+        title: "Reusable, scalable components",
+        body: "A component library built on shadcn/ui and Tailwind CSS.",
+      },
+      {
+        title: "Smooth API integration",
+        body: "Reliable integration with the backend for a stable user experience.",
+      },
     ],
     ar: [
       { title: "تقييم قائم على الأسئلة", body: "شاشات أسئلة تفاعلية تُكيّف التجربة مع كل طفل." },
-      { title: "مكوّنات قابلة لإعادة الاستخدام", body: "مكتبة مكوّنات مبنية على shadcn/ui و Tailwind CSS." },
+      {
+        title: "مكوّنات قابلة لإعادة الاستخدام",
+        body: "مكتبة مكوّنات مبنية على shadcn/ui و Tailwind CSS.",
+      },
       { title: "تكامل سلس مع الـ API", body: "ربط موثوق مع الباك إند لتجربة مستخدم مستقرة." },
     ],
   },
@@ -45,11 +57,35 @@ export const qudra: Project = {
   },
   cover: "/qudra/landing.png",
   shots: [
-    { src: "/qudra/landing.png", kind: "desktop", caption: { en: "Landing page", ar: "الصفحة الرئيسية" } },
-    { src: "/qudra/enter-test.png", kind: "desktop", caption: { en: "Starting an assessment", ar: "بدء التقييم" } },
-    { src: "/qudra/question1.png", kind: "desktop", caption: { en: "Question screen", ar: "شاشة سؤال" } },
-    { src: "/qudra/question2.png", kind: "desktop", caption: { en: "Question screen", ar: "شاشة سؤال" } },
-    { src: "/qudra/question3.png", kind: "desktop", caption: { en: "Question screen", ar: "شاشة سؤال" } },
-    { src: "/qudra/question4.png", kind: "desktop", caption: { en: "Question screen", ar: "شاشة سؤال" } },
+    {
+      src: "/qudra/landing.png",
+      kind: "desktop",
+      caption: { en: "Landing page", ar: "الصفحة الرئيسية" },
+    },
+    {
+      src: "/qudra/enter-test.png",
+      kind: "desktop",
+      caption: { en: "Starting an assessment", ar: "بدء التقييم" },
+    },
+    {
+      src: "/qudra/question1.png",
+      kind: "desktop",
+      caption: { en: "Question screen", ar: "شاشة سؤال" },
+    },
+    {
+      src: "/qudra/question2.png",
+      kind: "desktop",
+      caption: { en: "Question screen", ar: "شاشة سؤال" },
+    },
+    {
+      src: "/qudra/question3.png",
+      kind: "desktop",
+      caption: { en: "Question screen", ar: "شاشة سؤال" },
+    },
+    {
+      src: "/qudra/question4.png",
+      kind: "desktop",
+      caption: { en: "Question screen", ar: "شاشة سؤال" },
+    },
   ],
 };

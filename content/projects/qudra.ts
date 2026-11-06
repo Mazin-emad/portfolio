@@ -8,13 +8,13 @@ export const qudra: Project = {
   title: { en: "Qudra", ar: "قدرة" },
   tagline: {
     en: "A platform that helps a speech and language therapist assess and support children.",
-    ar: "منصة تساعد أخصائي نطق ولغة على تقييم الأطفال ودعمهم.",
+    ar: "منصة تعين أخصائي النطق واللغة على تقييم الأطفال ومتابعتهم.",
   },
   kind: { en: "Health & learning platform", ar: "منصة صحية وتعليمية" },
   role: { en: "Frontend Developer", ar: "مطوّر واجهات" },
   summary: {
     en: "A question-based assessment system that delivers personalised learning experiences for children with learning and communication difficulties.",
-    ar: "نظام تقييم قائم على الأسئلة يقدّم تجارب تعلّم مخصصة للأطفال ذوي صعوبات التعلم والتواصل.",
+    ar: "نظام تقييم يعتمد على الأسئلة، ويقدّم لكل طفل يواجه صعوبة في التعلم أو التواصل تجربة تعلّم تناسبه.",
   },
   overview: {
     en: [
@@ -22,8 +22,8 @@ export const qudra: Project = {
       "I worked as the Frontend Developer alongside a backend developer and a UI/UX designer, turning the Figma designs into a responsive, intuitive interface and integrating the backend APIs.",
     ],
     ar: [
-      "قدرة منصة ويب لأخصائي نطق ولغة، مصممة لمساعدة الأطفال ذوي صعوبات التعلم والتواصل. تقيّم الأطفال عبر نظام أسئلة وتقدّم تجارب تعلّم مخصصة.",
-      "عملتُ كمطوّر واجهات إلى جانب مطوّر باك إند ومصمم UI/UX، وحوّلتُ تصاميم Figma إلى واجهة متجاوبة وبديهية مع ربط واجهات الباك إند.",
+      "قدرة منصة ويب لأخصائي نطق ولغة، هدفها مساعدة الأطفال الذين يواجهون صعوبات في التعلم والتواصل. تقيّم الطفل من خلال أسئلة، ثم تقدّم له تجربة تعلّم تناسب احتياجه.",
+      "كنتُ مطوّر الواجهات في فريق ضمّ مطوّر باك إند ومصمم UI/UX. حوّلتُ تصاميم Figma إلى واجهة متجاوبة سهلة الاستخدام، وربطتها بواجهات الباك إند.",
     ],
   },
   highlights: {
@@ -42,12 +42,12 @@ export const qudra: Project = {
       },
     ],
     ar: [
-      { title: "تقييم قائم على الأسئلة", body: "شاشات أسئلة تفاعلية تُكيّف التجربة مع كل طفل." },
+      { title: "تقييم بالأسئلة", body: "شاشات أسئلة تفاعلية تتكيّف مع كل طفل." },
       {
-        title: "مكوّنات قابلة لإعادة الاستخدام",
-        body: "مكتبة مكوّنات مبنية على shadcn/ui و Tailwind CSS.",
+        title: "مكوّنات يُعاد استخدامها",
+        body: "مكتبة مكوّنات مبنية على shadcn/ui و Tailwind CSS، تنمو مع المشروع.",
       },
-      { title: "تكامل سلس مع الـ API", body: "ربط موثوق مع الباك إند لتجربة مستخدم مستقرة." },
+      { title: "ربط سلس بالـ API", body: "تكامل موثوق مع الباك إند يضمن تجربة مستقرة." },
     ],
   },
   stack: ["React", "Tailwind CSS", "shadcn/ui", "Figma"],

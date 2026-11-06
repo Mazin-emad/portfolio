@@ -8,13 +8,13 @@ export const elDokan: Project = {
   title: { en: "El-Dokan", ar: "الدكان" },
   tagline: {
     en: "A team-built Angular e-commerce platform with a .NET backend.",
-    ar: "منصة تجارة إلكترونية بـ Angular بُنيت بفريق مع باك إند بـ .NET.",
+    ar: "متجر إلكتروني بواجهة Angular وخادم .NET، بُني بروح الفريق.",
   },
   kind: { en: "E-commerce", ar: "متجر إلكتروني" },
   role: { en: "Frontend Developer", ar: "مطوّر واجهات" },
   summary: {
     en: "A fully responsive shopping experience — catalog, cart, checkout, authentication and orders — built in Angular.",
-    ar: "تجربة تسوّق متجاوبة بالكامل — كتالوج وسلة ودفع ومصادقة وطلبات — مبنية بـ Angular.",
+    ar: "رحلة تسوّق متكاملة تعمل على كل الشاشات: كتالوج وسلة ودفع وتسجيل دخول وطلبات، بُنيت بـ Angular.",
   },
   overview: {
     en: [
@@ -22,8 +22,8 @@ export const elDokan: Project = {
       "I crafted the whole Angular frontend in TypeScript with RxJS and Angular Material, integrating the catalog, cart, checkout, authentication and order management through the REST APIs the backend team provided.",
     ],
     ar: [
-      "الدكان منصة تجارة إلكترونية بُنيت بفريق متعدد التخصصات. عملتُ كمطوّر واجهات إلى جانب زميلين بنيا الباك إند بـ .NET.",
-      "طوّرتُ واجهة Angular كاملة بـ TypeScript و RxJS و Angular Material، وربطتُ الكتالوج والسلة والدفع والمصادقة وإدارة الطلبات عبر واجهات REST التي وفّرها فريق الباك إند.",
+      "الدكان متجر إلكتروني بُني بعمل جماعي، وكنتُ فيه مطوّر الواجهات إلى جانب زميلين تولّيا الباك إند بـ .NET.",
+      "بنيتُ واجهة Angular كاملة بـ TypeScript و RxJS و Angular Material، وربطتُ الكتالوج والسلة والدفع وتسجيل الدخول وإدارة الطلبات بواجهات REST التي جهّزها فريق الباك إند.",
     ],
   },
   highlights: {
@@ -41,15 +41,15 @@ export const elDokan: Project = {
     ar: [
       {
         title: "رحلة تسوّق كاملة",
-        body: "كتالوج المنتجات والسلة والدفع والمصادقة والمفضلة وصفحات الحساب.",
+        body: "كتالوج المنتجات، والسلة، والدفع، وتسجيل الدخول، والمفضلة، وصفحات الحساب.",
       },
       {
-        title: "معمارية تفاعلية",
-        body: "توجيه ونماذج تفاعلية وأنماط إدارة حالة بـ RxJS لكود قابل للصيانة.",
+        title: "بنية تفاعلية",
+        body: "توجيه ونماذج تفاعلية وإدارة للحالة بـ RxJS، ليبقى الكود سهل الصيانة.",
       },
       {
-        title: "مكوّنات واجهة قابلة لإعادة الاستخدام",
-        body: "مكوّنات قابلة للتوسّع على Angular Material.",
+        title: "مكوّنات يُعاد استخدامها",
+        body: "مكوّنات قابلة للتوسع فوق Angular Material.",
       },
     ],
   },

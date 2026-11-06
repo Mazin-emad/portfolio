@@ -8,13 +8,13 @@ export const wsyelh: Project = {
   title: { en: "Wsyelh", ar: "وسيلة" },
   tagline: {
     en: "An exam preparation and correction platform with AI-driven features.",
-    ar: "منصة لتحضير الاختبارات وتصحيحها بميزات مدعومة بالذكاء الاصطناعي.",
+    ar: "منصة لتحضير الاختبارات وتصحيحها، مدعومة بالذكاء الاصطناعي.",
   },
   kind: { en: "EdTech platform", ar: "منصة تعليمية" },
-  role: { en: "Frontend Lead", ar: "قائد الواجهات" },
+  role: { en: "Frontend Lead", ar: "قائد تطوير الواجهات" },
   summary: {
     en: "Dynamic exam generation, exam upload and correction, classes and automated PDF reports for educators in Saudi Arabia.",
-    ar: "توليد اختبارات ديناميكي، ورفع الاختبارات وتصحيحها، وإدارة الفصول، وتقارير PDF تلقائية للمعلمين في السعودية.",
+    ar: "إنشاء الاختبارات، ورفع الأوراق وتصحيحها، وإدارة الفصول، وتقارير PDF تلقائية — لمعلمين في السعودية.",
   },
   overview: {
     en: [
@@ -22,8 +22,8 @@ export const wsyelh: Project = {
       "I led the frontend: a modern, intuitive interface in React with shadcn/ui and Tailwind CSS, integrated with a .NET backend.",
     ],
     ar: [
-      "وسيلة منصة لتحضير الاختبارات مدعومة بميزات الذكاء الاصطناعي تُبسّط عمل الطلاب والمعلمين. بُنيت لصالح عميل تعليمي خاص في السعودية.",
-      "قدتُ تطوير الواجهات: واجهة حديثة وبديهية بـ React و shadcn/ui و Tailwind CSS، ومتكاملة مع باك إند بـ .NET.",
+      "وسيلة منصة لتحضير الاختبارات، تستعين بالذكاء الاصطناعي لتخفّف العبء عن الطلاب والمعلمين. بُنيت لعميل تعليمي خاص في السعودية.",
+      "قدتُ العمل على الواجهات: واجهة حديثة وسهلة الاستخدام بـ React و shadcn/ui و Tailwind CSS، مرتبطة بخادم .NET.",
     ],
   },
   highlights: {
@@ -46,10 +46,13 @@ export const wsyelh: Project = {
       },
     ],
     ar: [
-      { title: "توليد اختبارات ديناميكي", body: "يُعدّ المعلمون الاختبارات من داخل المنصة." },
-      { title: "الرفع والتصحيح", body: "مسار مخصص لرفع أوراق الاختبارات ومراجعة تصحيحها." },
-      { title: "الفصول والتقارير", body: "إدارة الفصول مع تقارير PDF تلقائية تُنشأ بـ React PDF." },
-      { title: "لوحة المعلومات", body: "نظرة واضحة على الاختبارات والفصول والنتائج لكل معلم." },
+      { title: "إنشاء الاختبارات", body: "يجهّز المعلم اختباراته من داخل المنصة نفسها." },
+      {
+        title: "رفع الأوراق وتصحيحها",
+        body: "مسار مخصص لرفع أوراق الإجابة ثم مراجعة نتيجة تصحيحها.",
+      },
+      { title: "الفصول والتقارير", body: "إدارة للفصول، وتقارير PDF تُنشأ تلقائيًا بـ React PDF." },
+      { title: "لوحة المعلومات", body: "صورة واضحة لاختبارات المعلم وفصوله ونتائجه في مكان واحد." },
     ],
   },
   stack: ["React", "shadcn/ui", "Tailwind CSS", "React PDF", ".NET API"],

@@ -2,7 +2,7 @@ import type { Project } from "../types";
 
 export const again: Project = {
   slug: "again",
-  year: { en: "2026", ar: "2026" },
+  year: { en: "Aug 2026", ar: "أغسطس 2026" },
   status: "private",
   hue: "#a78bfa",
   title: { en: "Again", ar: "Again" },
@@ -23,12 +23,12 @@ export const again: Project = {
     en: [
       "Again handles invoicing and inventory for a company and its factory. The people using it are workers, not engineers — they need something simple, fast and dependable. So the brief was clear: one system that looks and behaves the same everywhere, and keeps working when the internet doesn't.",
       "It is a full-stack, multi-platform system. The backend is a fast, scalable ASP.NET Core API, built by Esmail Mohamed, with a complex equation engine that generates invoices and product information for every unique product. I built what the users touch: the web app, the React Native mobile app, and the desktop app — the same React web code wrapped in Electron.",
-      "The whole system was built in two weeks.",
+      "My backend teammate and I built the whole system — backend, web, mobile and desktop — in two weeks in August 2026, using AI as a multiplier on top of our own experience. It was a very successful delivery.",
     ],
     ar: [
       "تدير Again فواتير شركة ومصنعها ومخزونهما. والذين يستخدمون النظام عمّال لا مهندسون، يحتاجون شيئًا بسيطًا وسريعًا يُعتمد عليه. فكان المطلوب واضحًا: نظام واحد يبدو ويعمل بالطريقة نفسها على كل جهاز، ولا يتوقف إذا انقطع الإنترنت.",
       "هو نظام Full-Stack متعدد المنصات. الخادم واجهة ASP.NET Core سريعة وقابلة للتوسع، من تطوير إسماعيل محمد، وفيها محرّك معادلات معقّد يُنتج الفواتير وبيانات كل منتج على حدة مهما اختلفت قواعده. وأنا بنيتُ كل ما يتعامل معه المستخدم: تطبيق الويب، وتطبيق الجوال بـ React Native، وتطبيق سطح المكتب — وهو كود React الخاص بالويب نفسه داخل Electron.",
-      "بُني النظام كله في أسبوعين.",
+      "بنيتُ أنا وزميلي في الباك إند النظام كله — الخادم والويب والجوال وسطح المكتب — في أسبوعين خلال أغسطس 2026، مستعينَين بالذكاء الاصطناعي إلى جانب خبرتنا. وكانت تجربة ناجحة جدًا.",
     ],
   },
   platforms: {

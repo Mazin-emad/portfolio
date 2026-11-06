@@ -1,0 +1,21 @@
+I wanted a portfolio that behaves like the products I build: fast, readable in Arabic, and honest about what it shows.
+
+## One codebase, two languages
+
+The site is a Next.js App Router project with `next-intl`. Every page exists at `/en` and `/ar`. Arabic is not a translation bolted on afterwards — layouts use logical CSS properties (`margin-inline-start`, `text-align: start`), so the same components flip correctly in right-to-left.
+
+## A hero that respects the device
+
+The hero renders a particle field that reacts to the cursor, plus a floating laptop and phone showing real project screenshots. It is built with three.js and React Three Fiber, and it is lazy-loaded.
+
+- With `prefers-reduced-motion`, or without WebGL, the 3D scene is skipped and a CSS mockup is shown instead.
+- On narrow screens only the particle field renders.
+- Rendering pauses when the hero is off screen or the tab is hidden.
+
+## Content as typed data
+
+Each case study is a typed TypeScript object with English and Arabic copy side by side. Adding a project means adding one file — the work index, the case-study page, the command palette and the sitemap all pick it up.
+
+## Small things that matter
+
+A ⌘K command palette, a theme set before first paint to avoid a flash, per-page metadata with `hreflang` alternates, and a contact form that posts through a server action so no keys reach the browser.

@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "Mazin Emad — Software Engineer",
+    "description": "Mazin Emad is a software engineer from Egypt building fast, Arabic-first full-stack products with Laravel, Next.js and Angular.",
+    "home": "Home"
+  },
+  "nav": {
+    "home": "Home",
+    "work": "Work",
+    "about": "About",
+    "journey": "Journey",
+    "services": "Services",
+    "blog": "Notes",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "skip": "Skip to content"
+  },
+  "common": {
+    "viewProject": "View case study",
+    "viewAll": "All work",
+    "liveSite": "Visit live site",
+    "sourceCode": "Source code",
+    "next": "Next project",
+    "back": "Back to work",
+    "role": "Role",
+    "year": "Year",
+    "stack": "Stack",
+    "status": "Status",
+    "theme": "Toggle theme",
+    "language": "العربية",
+    "languageLabel": "Switch to Arabic",
+    "readMore": "Read more",
+    "minRead": "min read",
+    "letsTalk": "Let's talk",
+    "scroll": "Scroll",
+    "privateRepo": "Private repository",
+    "demoOffline": "Demo offline",
+    "statusLive": "Live",
+    "statusProgress": "In progress",
+    "statusPrivate": "Private / internal"
+  },
+  "palette": {
+    "open": "Search",
+    "placeholder": "Search pages, projects, actions…",
+    "empty": "Nothing found.",
+    "pages": "Pages",
+    "projects": "Projects",
+    "actions": "Actions",
+    "toggleTheme": "Toggle light / dark theme",
+    "switchLang": "Switch language",
+    "email": "Email me",
+    "hint": "↑ ↓ to navigate · ↵ to open · esc to close"
+  },
+  "hero": {
+    "kicker": "Software engineer · Egypt",
+    "line1": "Full-stack products,",
+    "line2": "built Arabic-first.",
+    "sub": "I'm Mazin Emad. I design and build platforms people actually use — from a storefront serving a whole tool market to a training platform with 12K+ active users.",
+    "ctaWork": "See my work",
+    "ctaContact": "Get in touch",
+    "available": "Open to full-time roles and freelance projects",
+    "stat1": "active users on Dar Al-Ruya",
+    "stat2": "projects shipped",
+    "stat3": "languages, one codebase"
+  },
+  "featured": {
+    "kicker": "Selected work",
+    "title": "Six projects I'm proudest of",
+    "sub": "Two flagship platforms first — then the products behind them."
+  },
+  "stackSection": {
+    "kicker": "Toolbox"
+  },
+  "approach": {
+    "kicker": "How I work",
+    "title": "Built to be used, not just looked at.",
+    "items": [
+      { "title": "Arabic-first, not translated", "body": "Layouts, type and interactions are designed for right-to-left reading from line one." },
+      { "title": "Fast by default", "body": "Server-rendered pages, lean bundles and real measurements — not guesses." },
+      { "title": "Full-stack ownership", "body": "From the database and auth to PDFs, admin panels and a polished interface." },
+      { "title": "Made to be managed", "body": "Admin panels and CMS tools so your team ships changes without a developer." }
+    ]
+  },
+  "cta": {
+    "title": "Have a product in mind?",
+    "sub": "I'm open to full-time roles and freelance projects. Tell me what you're building.",
+    "button": "Start a conversation"
+  },
+  "work": {
+    "title": "Work",
+    "sub": "Case studies from the platforms I've built — and a quieter archive of everything else.",
+    "flagship": "Case studies",
+    "archiveTitle": "Archive",
+    "archiveSub": "Smaller and older projects. Some demos are offline because their backends are no longer hosted.",
+    "filterAll": "All"
+  },
+  "project": {
+    "overview": "Overview",
+    "built": "What I built",
+    "decisions": "Technical notes",
+    "numbers": "By the numbers",
+    "gallery": "Screens",
+    "desktop": "Desktop",
+    "mobile": "Mobile",
+    "stackTitle": "Stack",
+    "nextTitle": "Next case study"
+  },
+  "about": {
+    "kicker": "About",
+    "title": "Engineer first. Designer at heart.",
+    "p1": "I'm a software engineer from Egypt and a 2026 graduate of EELU. I like owning a problem end to end — the interface people touch and the system that makes it work.",
+    "p2": "Right now I'm building Dar Al-Ruya, a Laravel platform serving 12K–16K active users, and I've just shipped the frontend of Elkhalily, a fully RTL e-commerce store. I work mostly with TypeScript, Next.js, Angular and Laravel.",
+    "p3": "I learn fast, write things down, and care a lot about details that only show up when they're missing: spacing, focus states, loading time, Arabic typography.",
+    "facts": [
+      { "label": "Based in", "value": "Egypt" },
+      { "label": "Education", "value": "EELU — Class of 2026" },
+      { "label": "Languages", "value": "Arabic, English" },
+      { "label": "Focus", "value": "Full-stack · RTL · Performance" }
+    ],
+    "cta": "See where I've worked"
+  },
+  "journey": {
+    "kicker": "Journey",
+    "title": "From first portfolio to platforms with thousands of users.",
+    "sub": "A timeline of the projects that shaped how I build.",
+    "skills": "Skills",
+    "education": "Education",
+    "eduTitle": "Egyptian E-Learning University (EELU)",
+    "eduBody": "Bachelor's degree — Class of 2026.",
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "data": "Data",
+      "tools": "Tools & craft"
+    }
+  },
+  "services": {
+    "kicker": "Services",
+    "title": "What I can build for you.",
+    "sub": "Practical help for teams that need a product shipped — and kept easy to run.",
+    "items": [
+      { "title": "Web apps & storefronts", "body": "Fast, accessible interfaces in Next.js, React or Angular — from marketing sites to full e-commerce." },
+      { "title": "Full-stack platforms", "body": "Laravel or Node backends with SQL data models, authentication, roles, and PDF generation." },
+      { "title": "Admin panels & CMS", "body": "Back offices that let your team manage courses, products and content without touching code." },
+      { "title": "Arabic / RTL interfaces", "body": "Products designed for right-to-left from the start, with proper Arabic typography and bilingual support." },
+      { "title": "Performance & SEO", "body": "Measured improvements to speed, accessibility and search visibility — with before-and-after numbers." },
+      { "title": "Offline-first apps", "body": "PWAs that keep working without a connection and sync when it returns." }
+    ],
+    "processTitle": "How a project runs",
+    "process": [
+      { "title": "Discover", "body": "We pin down the goal, users and constraints." },
+      { "title": "Design", "body": "Flows and screens, agreed before code." },
+      { "title": "Build", "body": "Weekly demos so you always see progress." },
+      { "title": "Launch & support", "body": "Deploy, measure, and keep improving." }
+    ]
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Let's build something.",
+    "sub": "Tell me about your project or role. I usually reply within a day.",
+    "name": "Your name",
+    "email": "Your email",
+    "message": "How can I help?",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Thanks — your message is on its way. I'll reply soon.",
+    "error": "Something went wrong. Please try again or email me directly.",
+    "errName": "Please enter your name (3+ characters).",
+    "errEmail": "Please enter a valid email address.",
+    "errMessage": "Your message should be at least 10 characters.",
+    "direct": "Prefer email?",
+    "elsewhere": "Elsewhere"
+  },
+  "blog": {
+    "kicker": "Notes",
+    "title": "Notes on building.",
+    "sub": "Short write-ups on engineering, Arabic interfaces and the work behind the projects.",
+    "empty": "More notes are on the way."
+  },
+  "footer": {
+    "tagline": "Software engineer building Arabic-first, full-stack products.",
+    "rights": "All rights reserved.",
+    "built": "Designed and built by Mazin"
+  },
+  "notFound": {
+    "title": "This page doesn't exist.",
+    "body": "The link may be broken or the page was moved.",
+    "cta": "Back to home"
+  }
+}

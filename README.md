@@ -1,91 +1,52 @@
-# 🌐 Mazin Emad – Portfolio
+# Mazin Emad — Portfolio (v3)
 
-Welcome to my personal developer portfolio, built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/). This site showcases my projects, skills, and experience as a frontend developer.
+Bilingual (English / Arabic, RTL-first) portfolio built with **Next.js 16**, **React 19**, **TypeScript**,
+**Tailwind CSS 4**, **next-intl**, **motion** and a lazy-loaded **three.js** hero.
 
-## 🚀 Tech Stack
-
-- **Next.js** – App Router, SEO optimization, performance-focused
-- **Tailwind CSS** – Utility-first styling with custom themes
-- **TypeScript** (optional) – For type safety and better DX
-- **Framer Motion** – Smooth animations and transitions
-- **Vercel** – Hosting and CI/CD
-
-## 📁 Project Structure
-
-```
-/app           # Pages and routes (App Router)
-/components    # Reusable UI components
-/public        # Static assets
-/styles        # Global styles (if needed)
-/utils         # Utility functions and helpers
-```
-
-## 🧰 Getting Started
-
-### 1. Clone the repo
+## Scripts
 
 ```bash
-git clone https://github.com/mazinemad/portfolio.git
-cd portfolio
+npm run dev        # development server
+npm run build      # production build
+npm run start      # serve the production build
+npm run lint       # ESLint (flat config, eslint-config-next)
+npm run typecheck  # tsc --noEmit
 ```
 
-### 2. Install dependencies
+## Environment
 
-```bash
-npm install
-# or
-yarn
+Copy `.env.example` to `.env.local`:
+
+| Variable                 | Purpose                                            |
+| ------------------------ | -------------------------------------------------- |
+| `WEB3FORMS_ACCESS_KEY`   | Contact form (server action → Web3Forms). Required |
+| `NEXT_PUBLIC_SITE_URL`   | Canonical URL for metadata, sitemap and OG         |
+
+## Structure
+
+```
+app/[locale]/          routes: home, work, work/[slug], about, journey, services, blog, contact
+components/            layout, home, work, three (WebGL), ui, contact, seo
+content/projects/      one typed file per case study (EN + AR side by side)
+content/archive.ts     smaller / older projects
+content/blog/          MDX posts (<slug>.en.mdx + <slug>.ar.mdx) and the post index
+messages/{en,ar}.json  UI strings
+i18n/                  routing, request config, navigation helpers
+proxy.ts               locale routing (Next.js 16 "proxy", formerly middleware)
+public/projects/       compressed WebP screenshots (desktop 1440w, mobile 780w)
+docs/                  research notes and validation checklist for case-study numbers
 ```
 
-### 3. Run the dev server
+## Adding a project
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. Create `content/projects/<slug>.ts` (copy an existing one) with `en` and `ar` copy.
+2. Add the screenshots to `public/`.
+3. Register it in `content/projects/index.ts`. The work index, case-study page, command palette,
+   sitemap and journey timeline pick it up automatically.
 
-Open `http://localhost:3000` to view it in your browser.
+## Notes
 
----
-
-## 🌟 Features
-
-- Responsive, mobile-friendly design
-- Dark mode support
-- SEO and metadata configured
-- Animated transitions
-- Dynamic project and skills section
-
-## 🛠️ Customization
-
-You can customize the content in:
-
-- `/data` or `/content` (if you use JSON/MDX)
-- `/components` for UI changes
-- `/app/page.tsx` for the homepage content
-
----
-
-## 📦 Deployment
-
-Deployed on [Vercel](https://vercel.com/). To deploy your own:
-
-```bash
-npx vercel
-```
-
----
-
-## 🙋‍♂️ About Me
-
-I’m Mazin Emad, a frontend developer passionate about building clean, performant interfaces using React, Firebase, and modern web tools.
-
-- 📫 [Contact](mazin0emd@gmail.com)
-- 🌍 [Live Portfolio](https://yourdomain.com)
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+- 3D hero: particle field + floating laptop/phone. Falls back to CSS mockups for
+  `prefers-reduced-motion` or no WebGL, particles only on narrow screens, and pauses off screen.
+- Figures in `content/projects/elkhalily.ts` are flagged `TODO(owner)` until validated.
+- TypeScript is pinned to 6.x because `typescript-eslint` does not yet support 7.x.

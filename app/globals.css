@@ -211,8 +211,41 @@ p {
 
 /* Hero portrait: fade the bust into the page instead of a hard crop. */
 .portrait-fade {
-  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 98%);
-  mask-image: linear-gradient(to bottom, #000 70%, transparent 98%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent 99%);
+  mask-image: linear-gradient(to bottom, #000 74%, transparent 99%);
+}
+/* Editorial portrait: mono photo with a lime rim light from the "end" side; colour returns on hover. */
+.portrait-photo {
+  --rim: rgb(197 248 42 / 0.95);
+  --rim-glow: rgb(197 248 42 / 0.2);
+  filter: grayscale(1) contrast(1.08) brightness(0.96) drop-shadow(3px -1px 0 var(--rim))
+    drop-shadow(0 0 24px var(--rim-glow));
+  transition: filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[dir="rtl"] .portrait-photo {
+  filter: grayscale(1) contrast(1.08) brightness(0.96) drop-shadow(-3px -1px 0 var(--rim))
+    drop-shadow(0 0 24px var(--rim-glow));
+}
+[data-theme="light"] .portrait-photo {
+  --rim: rgb(61 102 0 / 0.75);
+  --rim-glow: rgb(120 170 0 / 0.22);
+}
+@media (hover: hover) {
+  .group\/portrait:hover .portrait-photo {
+    filter: grayscale(0) contrast(1.04) brightness(1) drop-shadow(3px -1px 0 var(--rim))
+      drop-shadow(0 0 24px var(--rim-glow));
+  }
+  [dir="rtl"] .group\/portrait:hover .portrait-photo {
+    filter: grayscale(0) contrast(1.04) brightness(1) drop-shadow(-3px -1px 0 var(--rim))
+      drop-shadow(0 0 24px var(--rim-glow));
+  }
+}
+.portrait-name {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--line-strong);
+  background: linear-gradient(to bottom, var(--glow), transparent 75%);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 @keyframes float-chip {
   0%,

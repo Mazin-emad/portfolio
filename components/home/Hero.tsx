@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { HeroScene } from "@/components/three/HeroScene";
-import { AvatarStage } from "@/components/home/AvatarStage";
+import { PortraitStage } from "@/components/home/PortraitStage";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -73,7 +73,7 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <AvatarStage />
+        <PortraitStage />
       </div>
     </section>
   );

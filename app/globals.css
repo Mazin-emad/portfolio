@@ -210,9 +210,9 @@ p {
 }
 
 /* Hero portrait: fade the bust into the page instead of a hard crop. */
-.avatar-fade {
-  -webkit-mask-image: radial-gradient(ellipse 62% 66% at 50% 40%, #000 62%, transparent 100%);
-  mask-image: radial-gradient(ellipse 62% 66% at 50% 40%, #000 62%, transparent 100%);
+.portrait-fade {
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 98%);
+  mask-image: linear-gradient(to bottom, #000 70%, transparent 98%);
 }
 @keyframes float-chip {
   0%,

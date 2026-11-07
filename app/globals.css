@@ -158,7 +158,8 @@ p {
   mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 72%);
 }
 .text-outline {
-  -webkit-text-stroke: 1px var(--line-strong);
+  /* >= 3:1 against the page background (large text) while staying a quiet outline */
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--muted) 72%, var(--bg));
   color: transparent;
 }
 .link-u {
@@ -193,7 +194,43 @@ p {
   transform: scaleX(-1);
 }
 
+/* Scroll-reveal (see components/ui/Reveal.tsx): visible by default, hidden only once JS knows it is below the fold */
+.reveal {
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s);
+}
+.reveal[data-hide] {
+  opacity: 0;
+  transform: translateY(var(--y, 24px));
+}
+
+/* Above-the-fold entrance: pure CSS so it starts at first paint, not after hydration (keeps LCP fast). */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--rise-y, 18px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--d, 0s);
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal[data-hide] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .rise {
+    animation-delay: 0s !important;
+  }
   html {
     scroll-behavior: auto;
   }

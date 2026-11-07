@@ -6,11 +6,11 @@ The site is a Next.js App Router project with `next-intl`. Every page exists at 
 
 ## A hero that respects the device
 
-The hero renders a particle field that reacts to the cursor, plus a floating laptop and phone showing real project screenshots. It is built with three.js and React Three Fiber, and it is lazy-loaded.
+The hero pairs an editorial portrait with a cursor-reactive particle backdrop. The portrait is plain DOM and CSS with a few motion springs, so it costs almost nothing; the particles are three.js, lazy-loaded.
 
-- With `prefers-reduced-motion`, or without WebGL, the 3D scene is skipped and a CSS mockup is shown instead.
-- On narrow screens only the particle field renders.
+- With `prefers-reduced-motion`, or without WebGL, the particle field is skipped and the portrait simply stays still.
 - Rendering pauses when the hero is off screen or the tab is hidden.
+- Each case study has its own 3D stage: a floating laptop and phone showing that project's real screenshots, with a plain CSS mockup as the fallback.
 
 ## Content as typed data
 
@@ -18,4 +18,4 @@ Each case study is a typed TypeScript object with English and Arabic copy side b
 
 ## Small things that matter
 
-A ⌘K command palette, a theme set before first paint to avoid a flash, per-page metadata with `hreflang` alternates, and a contact form that posts through a server action so no keys reach the browser.
+A ⌘K command palette, a theme set before first paint to avoid a flash, per-page metadata with `hreflang` alternates, structured data and share images generated in both languages, and a contact form that posts through a server action so no keys reach the browser.

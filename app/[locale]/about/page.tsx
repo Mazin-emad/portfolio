@@ -4,14 +4,14 @@ import portrait from "@/assets/eng-mazin2.jpeg";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ButtonLink } from "@/components/ui/Button";
-import { pageMetadata } from "@/lib/seo";
+import { PageSchema } from "@/components/seo/PageSchema";
+import { staticPageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "about" });
-  return pageMetadata({ locale, path: "/about", title: t("kicker"), description: t("p1") });
+  return staticPageMetadata(locale, "/about", "about");
 }
 
 export default async function AboutPage({ params }: Props) {
@@ -22,6 +22,7 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <div className="container-x pt-36">
+      <PageSchema locale={locale} path="/about" page="about" type="ProfilePage" />
       <SectionHeading as="h1" kicker={t("kicker")} title={t("title")} />
 
       <div className="mt-16 grid gap-14 lg:grid-cols-[0.8fr_1.2fr]">

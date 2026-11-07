@@ -10,10 +10,16 @@ export async function ProjectCard({
   project,
   index,
   size = "md",
+  priority = false,
+  heading: Heading = "h3",
 }: {
   project: Project;
   index: number;
   size?: "lg" | "md";
+  /** Above-the-fold card: load its image eagerly with high priority (it can be the LCP). */
+  priority?: boolean;
+  /** Heading level, so the page outline never skips a level. */
+  heading?: "h2" | "h3";
 }) {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("common");
@@ -47,6 +53,8 @@ export async function ProjectCard({
             src={project.cover}
             alt=""
             fill
+            priority={priority}
+            fetchPriority={priority ? "high" : undefined}
             sizes={
               size === "lg"
                 ? "(min-width: 1024px) 1160px, 100vw"
@@ -82,7 +90,9 @@ export async function ProjectCard({
                 {status}
               </p>
             </div>
-            <h3 className="text-3xl font-semibold sm:text-4xl">{project.title[locale]}</h3>
+            <Heading className="text-3xl font-semibold sm:text-4xl">
+              {project.title[locale]}
+            </Heading>
             <p className="text-muted mt-3 max-w-xl">{project.tagline[locale]}</p>
           </div>
           <span className="border-line-strong group-hover:bg-accent group-hover:text-accent-ink group-hover:border-accent grid size-12 shrink-0 place-items-center rounded-full border transition-colors duration-300">

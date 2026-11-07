@@ -6,6 +6,8 @@ export const site = {
   twitterHandle: "@MazinEmad685945",
   linkedin: "https://www.linkedin.com/in/mazin0emd",
   github: "https://github.com/Mazin-emad",
+  /** Bump when page content meaningfully changes; feeds the sitemap `lastmod` (never "now"). */
+  updated: "2026-11-07",
   googleVerification: "Ht_PV4uQDF-9RdOpNAAbA-G1oEHBLScA2GODowZsPss",
 } as const;
 

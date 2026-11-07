@@ -1,8 +1,9 @@
 {
   "meta": {
-    "title": "Mazin Emad — Software Engineer",
-    "description": "Mazin Emad is a software engineer from Egypt building fast, Arabic-first full-stack products with Laravel, Next.js and Angular.",
-    "home": "Home"
+    "title": "Mazin Emad — Full-Stack Software Engineer (Laravel, Next.js)",
+    "description": "Egypt-based software engineer building fast, Arabic-first full-stack products with Laravel, Next.js and Angular. See the case studies and get in touch.",
+    "home": "Home",
+    "rss": "Mazin Emad — Notes (RSS)"
   },
   "nav": {
     "home": "Home",
@@ -246,5 +247,40 @@
     "title": "This page doesn't exist.",
     "body": "The link may be broken or the page was moved.",
     "cta": "Back to home"
+  },
+  "seo": {
+    "home": {
+      "title": "Mazin Emad — Full-Stack Software Engineer (Laravel, Next.js)",
+      "description": "Egypt-based software engineer building fast, Arabic-first full-stack products with Laravel, Next.js and Angular. See the case studies and get in touch."
+    },
+    "about": {
+      "title": "About Mazin Emad — Software Engineer in Egypt",
+      "description": "Mazin Emad is an Egyptian software engineer building full-stack platforms with Laravel, Next.js and Angular, with a focus on Arabic and RTL interfaces."
+    },
+    "journey": {
+      "title": "Journey — Mazin Emad, Full-Stack Software Engineer",
+      "description": "How Mazin Emad went from a first portfolio to full-stack platforms used by thousands of people: the projects, the stack and the lessons along the way."
+    },
+    "services": {
+      "title": "Hire a Full-Stack Developer — Services by Mazin Emad",
+      "description": "Hire Mazin Emad for web apps and storefronts, full-stack platforms, admin panels, Arabic/RTL interfaces, performance and SEO, and offline-first apps."
+    },
+    "work": {
+      "title": "Case Studies — Full-Stack & Arabic RTL Projects | Mazin Emad",
+      "description": "Case studies by Mazin Emad: full-stack platforms, storefronts and multi-platform systems built with Laravel, Next.js and Angular, with Arabic RTL support."
+    },
+    "blog": {
+      "title": "Notes on Building Arabic-First Web Products | Mazin Emad",
+      "description": "Short engineering notes from Mazin Emad on building fast, bilingual, Arabic-first web products with Next.js and Laravel."
+    },
+    "contact": {
+      "title": "Contact Mazin Emad — Start a Project",
+      "description": "Have a product in mind? Send Mazin Emad a message or an email to talk about your project, your timeline and the stack."
+    },
+    "ogTagline": "Software Engineer · Egypt",
+    "ogHeadline1": "Full-stack products,",
+    "ogHeadline2": "built Arabic-first.",
+    "ogCase": "Case study",
+    "ogNote": "Note"
   }
 }

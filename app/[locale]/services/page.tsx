@@ -1,15 +1,17 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { ids } from "@/lib/schema";
+import { urlFor } from "@/lib/seo";
 import { CtaBand } from "@/components/home/CtaBand";
-import { pageMetadata } from "@/lib/seo";
+import { PageSchema } from "@/components/seo/PageSchema";
+import { staticPageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "services" });
-  return pageMetadata({ locale, path: "/services", title: t("kicker"), description: t("sub") });
+  return staticPageMetadata(locale, "/services", "services");
 }
 
 export default async function ServicesPage({ params }: Props) {
@@ -21,6 +23,32 @@ export default async function ServicesPage({ params }: Props) {
 
   return (
     <>
+      <PageSchema
+        locale={locale}
+        path="/services"
+        page="services"
+        extra={[
+          {
+            "@type": "ProfessionalService",
+            "@id": `${urlFor(locale, "/services")}#service`,
+            name:
+              locale === "ar"
+                ? "مازن عماد — تطوير ويب متكامل"
+                : "Mazin Emad — Full-stack web development",
+            url: urlFor(locale, "/services"),
+            provider: { "@id": ids.person },
+            inLanguage: ["ar", "en"],
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: t("title"),
+              itemListElement: items.map((i) => ({
+                "@type": "Offer",
+                itemOffered: { "@type": "Service", name: i.title, description: i.body },
+              })),
+            },
+          },
+        ]}
+      />
       <div className="container-x pt-36">
         <SectionHeading as="h1" kicker={t("kicker")} title={t("title")} sub={t("sub")} />
 

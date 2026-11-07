@@ -13,7 +13,8 @@ import { ProjectCard } from "@/components/work/ProjectCard";
 import { ButtonLink, ExternalLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { pageMetadata } from "@/lib/seo";
+import { pageMetadata, urlFor } from "@/lib/seo";
+import { ids, pageGraph } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -27,12 +28,12 @@ export async function generateMetadata({ params }: Props) {
   const project = getProject(slug);
   if (!project) return {};
   const l = locale as Locale;
+  const long = `${project.title[l]} — ${project.kind[l]} | ${site.name}`;
   return pageMetadata({
     locale,
     path: `/work/${slug}`,
-    title: `${project.title[l]} — ${project.kind[l]}`,
+    title: long.length <= 66 ? long : `${project.title[l]} — ${project.kind[l]}`,
     description: project.summary[l],
-    image: project.cover,
   });
 }
 
@@ -45,6 +46,7 @@ export default async function ProjectPage({ params }: Props) {
   const l = locale as Locale;
   const t = await getTranslations("project");
   const tc = await getTranslations("common");
+  const tn = await getTranslations("nav");
 
   const idx = projects.findIndex((p) => p.slug === slug);
   const next = projects[(idx + 1) % projects.length];
@@ -76,17 +78,37 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <article>
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "CreativeWork",
-          name: project.title[l],
+        data={pageGraph({
+          locale,
+          path: `/work/${slug}`,
+          name: `${project.title[l]} — ${project.kind[l]}`,
           description: project.summary[l],
-          author: { "@type": "Person", name: site.name },
-          dateCreated: project.year.en.slice(0, 4),
-          inLanguage: locale,
+          crumbs: [
+            { name: tn("work"), path: "/work" },
+            { name: project.title[l], path: `/work/${slug}` },
+          ],
           image: `${site.url}${project.cover}`,
-          keywords: project.stack.join(", "),
-        }}
+          extra: [
+            {
+              "@type": "CreativeWork",
+              "@id": `${urlFor(locale, `/work/${slug}`)}#project`,
+              name: project.title[l],
+              headline: project.tagline[l],
+              description: project.summary[l],
+              url: urlFor(locale, `/work/${slug}`),
+              mainEntityOfPage: { "@id": `${urlFor(locale, `/work/${slug}`)}#webpage` },
+              image: `${site.url}${project.cover}`,
+              creator: { "@id": ids.person },
+              author: { "@id": ids.person },
+              ...(project.year.en.match(/\d{4}/)
+                ? { dateCreated: project.year.en.match(/\d{4}/)![0] }
+                : null),
+              inLanguage: locale,
+              keywords: project.stack.join(", "),
+              genre: project.kind[l],
+            },
+          ],
+        })}
       />
 
       {/* Hero */}

@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl";
 import { HeroScene } from "@/components/three/HeroScene";
 import { PortraitStage } from "@/components/home/PortraitStage";
 import { ButtonLink } from "@/components/ui/Button";
-import { Reveal } from "@/components/ui/Reveal";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -25,7 +24,7 @@ export function Hero() {
 
       <div className="container-x relative grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <Reveal>
+          <div className="rise">
             <p className="label border-line bg-surface/60 inline-flex items-center gap-2.5 rounded-full border px-4 py-2 backdrop-blur">
               <span className="relative flex size-2">
                 <span className="bg-accent absolute inline-flex size-full animate-ping rounded-full opacity-70" />
@@ -33,33 +32,33 @@ export function Hero() {
               </span>
               {t("kicker")}
             </p>
-          </Reveal>
+          </div>
 
           <h1 className="mt-8 text-[clamp(2.5rem,4.8vw,4.4rem)] font-semibold">
-            <Reveal delay={0.05}>
+            <div className="rise" style={{ "--d": "0.05s" } as React.CSSProperties}>
               <span className="block">{t("line1")}</span>
-            </Reveal>
-            <Reveal delay={0.12}>
+            </div>
+            <div className="rise" style={{ "--d": "0.12s" } as React.CSSProperties}>
               <span className="text-accent-text block">{t("line2")}</span>
-            </Reveal>
+            </div>
           </h1>
 
-          <Reveal delay={0.2}>
+          <div className="rise" style={{ "--d": "0.2s" } as React.CSSProperties}>
             <p className="text-muted mt-8 max-w-xl text-lg leading-relaxed sm:text-xl">
               {t("sub")}
             </p>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.28}>
+          <div className="rise" style={{ "--d": "0.28s" } as React.CSSProperties}>
             <div className="mt-10 flex flex-wrap gap-3">
               <ButtonLink href="/work">{t("ctaWork")}</ButtonLink>
               <ButtonLink href="/contact" variant="ghost">
                 {t("ctaContact")}
               </ButtonLink>
             </div>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.36}>
+          <div className="rise" style={{ "--d": "0.36s" } as React.CSSProperties}>
             <dl className="border-line mt-14 grid max-w-xl grid-cols-3 gap-6 border-t pt-8">
               {stats.map((s) => (
                 <div key={s.l}>
@@ -70,7 +69,7 @@ export function Hero() {
                 </div>
               ))}
             </dl>
-          </Reveal>
+          </div>
         </div>
 
         <PortraitStage />

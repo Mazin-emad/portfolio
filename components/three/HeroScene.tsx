@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
+import { useWake } from "./useWake";
+
 const Scene = dynamic(() => import("./Scene"), { ssr: false });
 
 export function canWebGL() {
@@ -25,6 +27,7 @@ export function HeroScene() {
   const [dense, setDense] = useState(false);
   const [light, setLight] = useState(false);
   const [inView, setInView] = useState(true);
+  const awake = useWake();
   const [tabVisible, setTabVisible] = useState(true);
 
   useEffect(() => {
@@ -65,7 +68,7 @@ export function HeroScene() {
 
   return (
     <div ref={ref} aria-hidden className="pointer-events-none absolute inset-0">
-      {enabled && <Scene light={light} dense={dense} active={inView && tabVisible} />}
+      {enabled && awake && <Scene light={light} dense={dense} active={inView && tabVisible} />}
     </div>
   );
 }

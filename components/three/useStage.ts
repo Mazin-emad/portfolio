@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useWake } from "./useWake";
 
 function canWebGL() {
   try {
@@ -13,7 +14,8 @@ function canWebGL() {
 
 /**
  * Decides whether a 3D stage may render and whether it should be animating.
- *  - `enabled`: WebGL exists, motion isn't reduced, and the stage has been near the viewport
+ *  - `enabled`: WebGL exists, motion isn't reduced, the stage has been near the viewport,
+ *    and the visitor has interacted (so 3D never competes with first load)
  *  - `active`: on screen and the tab is visible (otherwise the render loop is paused)
  * Until `enabled` is true, callers show their static fallback.
  */
@@ -23,6 +25,7 @@ export function useStage<T extends HTMLElement>(rootMargin = "320px") {
   const [near, setNear] = useState(false);
   const [inView, setInView] = useState(false);
   const [tabVisible, setTabVisible] = useState(true);
+  const awake = useWake();
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -52,5 +55,5 @@ export function useStage<T extends HTMLElement>(rootMargin = "320px") {
     };
   }, [rootMargin]);
 
-  return { ref, enabled: capable && near, active: inView && tabVisible };
+  return { ref, enabled: capable && near && awake, active: inView && tabVisible };
 }

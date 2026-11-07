@@ -59,7 +59,6 @@ function Devices({ desktop, mobile, rtl }: { desktop: string[]; mobile: string[]
     return () => window.removeEventListener("pointermove", move);
   }, [gl]);
 
-  /* eslint-disable react-hooks/immutability -- three.js objects are animated imperatively */
   useFrame((_, dt) => {
     const g = group.current;
     if (!g) return;
@@ -77,7 +76,6 @@ function Devices({ desktop, mobile, rtl }: { desktop: string[]; mobile: string[]
     g.rotation.y += (tx - g.rotation.y) * (1 - Math.pow(0.002, dt));
     g.rotation.x += (ty - g.rotation.x) * (1 - Math.pow(0.002, dt));
   });
-  /* eslint-enable react-hooks/immutability */
 
   // fit the group to the visible width (so phones get a full-width laptop), never bigger than 1.08
   const s = Math.min(1.08, viewport.width / (hasPhone ? 6.8 : 5.0));

@@ -5,14 +5,14 @@ import { posts } from "@/content/blog";
 import type { Locale } from "@/content/types";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { pageMetadata } from "@/lib/seo";
+import { PageSchema } from "@/components/seo/PageSchema";
+import { staticPageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "blog" });
-  return pageMetadata({ locale, path: "/blog", title: t("kicker"), description: t("sub") });
+  return staticPageMetadata(locale, "/blog", "blog");
 }
 
 export default async function BlogPage({ params }: Props) {
@@ -25,6 +25,7 @@ export default async function BlogPage({ params }: Props) {
 
   return (
     <div className="container-x pt-36">
+      <PageSchema locale={locale} path="/blog" page="blog" type="CollectionPage" />
       <SectionHeading as="h1" kicker={t("kicker")} title={t("title")} sub={t("sub")} />
       <ul className="border-line mt-16 border-t">
         {posts.map((p, i) => (

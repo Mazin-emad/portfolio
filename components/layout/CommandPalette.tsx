@@ -19,13 +19,13 @@ type Item = {
   run: () => void;
 };
 
-export function CommandPalette() {
+export function CommandPalette({ initialOpen = false }: { initialOpen?: boolean }) {
   const locale = useLocale() as Locale;
   const t = useTranslations("palette");
   const tn = useTranslations("nav");
   const router = useRouter();
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(initialOpen);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);

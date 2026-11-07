@@ -3,15 +3,15 @@ import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ContactForm } from "@/components/contact/ContactForm";
-import { pageMetadata } from "@/lib/seo";
+import { PageSchema } from "@/components/seo/PageSchema";
+import { staticPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "contact" });
-  return pageMetadata({ locale, path: "/contact", title: t("kicker"), description: t("sub") });
+  return staticPageMetadata(locale, "/contact", "contact");
 }
 
 export default async function ContactPage({ params }: Props) {
@@ -27,6 +27,7 @@ export default async function ContactPage({ params }: Props) {
 
   return (
     <div className="container-x pt-36">
+      <PageSchema locale={locale} path="/contact" page="contact" type="ContactPage" />
       <SectionHeading as="h1" kicker={t("kicker")} title={t("title")} sub={t("sub")} />
 
       <div className="mt-16 grid gap-16 lg:grid-cols-[1.3fr_0.7fr]">

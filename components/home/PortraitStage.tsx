@@ -103,23 +103,21 @@ export function PortraitStage() {
       </motion.div>
 
       {/* 3 · the photo */}
-      <motion.div
-        style={{ ...photo, rotate: tilt }}
-        initial={{ opacity: 0, y: 28 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={
-          reduce ? { duration: 0 } : { duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }
-        }
-        className="portrait-fade absolute inset-0"
-      >
-        <Image
-          src="/portrait/mazin-cutout.webp"
-          alt={t("portraitAlt")}
-          fill
-          priority
-          sizes="(min-width: 1024px) 520px, 92vw"
-          className="portrait-photo object-contain object-bottom"
-        />
+      <motion.div style={{ ...photo, rotate: tilt }} className="portrait-fade absolute inset-0">
+        <div
+          className="rise absolute inset-0"
+          style={{ "--d": "0.1s", "--rise-y": "28px" } as React.CSSProperties}
+        >
+          <Image
+            src="/portrait/mazin-cutout.webp"
+            alt={t("portraitAlt")}
+            fill
+            priority
+            fetchPriority="high"
+            sizes="(min-width: 1024px) 520px, 92vw"
+            className="portrait-photo object-contain object-bottom"
+          />
+        </div>
       </motion.div>
 
       {/* 4 · floating tags */}

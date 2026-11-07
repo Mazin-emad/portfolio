@@ -5,7 +5,8 @@ import type { Locale } from "@/content/types";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Link } from "@/i18n/navigation";
-import { pageMetadata } from "@/lib/seo";
+import { PageSchema } from "@/components/seo/PageSchema";
+import { staticPageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -36,8 +37,7 @@ const skills = {
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "journey" });
-  return pageMetadata({ locale, path: "/journey", title: t("kicker"), description: t("sub") });
+  return staticPageMetadata(locale, "/journey", "journey");
 }
 
 type Entry = { title: string; kind: string; role?: string; href?: string };
@@ -63,6 +63,7 @@ export default async function JourneyPage({ params }: Props) {
 
   return (
     <div className="container-x pt-36">
+      <PageSchema locale={locale} path="/journey" page="journey" />
       <SectionHeading as="h1" kicker={t("kicker")} title={t("title")} sub={t("sub")} />
 
       <ol className="mt-20">

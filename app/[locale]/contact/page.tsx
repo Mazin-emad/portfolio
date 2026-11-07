@@ -32,7 +32,7 @@ export default async function ContactPage({ params }: Props) {
 
       <div className="mt-16 grid gap-16 lg:grid-cols-[1.3fr_0.7fr]">
         <Reveal>
-          <ContactForm />
+          <ContactForm accessKey={process.env.WEB3FORMS_ACCESS_KEY} />
         </Reveal>
 
         <Reveal delay={0.08}>

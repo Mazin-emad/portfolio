@@ -103,12 +103,15 @@ export default async function LocaleLayout({
       className={`${display.variable} ${sans.variable} ${mono.variable} ${arabic.variable}`}
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <noscript>
           <style>{`.reveal,.rise{opacity:1!important;transform:none!important;animation:none!important}`}</style>
         </noscript>
       </head>
       <body className="grain min-h-dvh">
+        {/* Theme init: raw HTML (not a React <script>) so locale switches don't trigger React's
+            "script tag while rendering" warning. Parsed from the server HTML at the very top of
+            <body>, it runs before anything paints, so there is no theme flash. */}
+        <div hidden dangerouslySetInnerHTML={{ __html: `<script>${themeScript}</script>` }} />
         <JsonLd data={siteGraph(locale)} />
         <NextIntlClientProvider>
           <a

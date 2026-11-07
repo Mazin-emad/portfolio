@@ -9,7 +9,7 @@ export function Hero() {
   const stats = [
     { v: "12K+", l: t("stat1") },
     { v: "20+", l: t("stat2") },
-    { v: "2", l: t("stat3") },
+    { v: "4", l: t("stat3") },
   ];
 
   return (

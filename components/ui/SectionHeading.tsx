@@ -25,7 +25,9 @@ export function SectionHeading({
         </Reveal>
       )}
       <Reveal delay={0.06}>
-        <Tag className="text-[clamp(2.25rem,6vw,4.5rem)] font-semibold">{title}</Tag>
+        <Tag className="text-[clamp(2.25rem,6vw,4.5rem)] font-semibold whitespace-pre-line">
+          {title}
+        </Tag>
       </Reveal>
       {sub && (
         <Reveal delay={0.12}>

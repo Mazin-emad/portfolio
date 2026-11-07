@@ -63,7 +63,7 @@
     "available": "Open to full-time roles and freelance projects",
     "stat1": "active users on Dar Al-Ruya",
     "stat2": "projects shipped",
-    "stat3": "languages, one codebase",
+    "stat3": "core languages: TS, Java, C#, Python",
     "chip1": "Full-Stack",
     "chip2": "Arabic · RTL",
     "chip3": "Open to work",
@@ -126,9 +126,9 @@
   },
   "about": {
     "kicker": "About",
-    "title": "Engineer first. Designer at heart.",
+    "title": "Engineering the core.\nCrafting the surface.",
     "p1": "I'm a software engineer from Egypt and a 2026 graduate of EELU. I like owning a problem end to end — the interface people touch and the system that makes it work.",
-    "p2": "Right now I'm building Dar Al-Ruya, a Laravel platform serving 12K–16K active users, and I've just shipped the frontend of Elkhalily, a fully RTL e-commerce store. I work mostly with TypeScript, Next.js, Angular and Laravel.",
+    "p2": "Right now I'm building Dar Al-Ruya, a Laravel platform serving 12K–16K active users, and I've just shipped the frontend of Elkhalily, a fully RTL e-commerce store. My main languages are TypeScript, Java, C# (.NET) and Python, and on the web I work mostly with Next.js, Angular and Laravel.",
     "p3": "I learn fast, write things down, and care a lot about details that only show up when they're missing: spacing, focus states, loading time, Arabic typography.",
     "facts": [
       {
@@ -140,7 +140,7 @@
         "value": "EELU — Class of 2026"
       },
       {
-        "label": "Languages",
+        "label": "Speaks",
         "value": "Arabic, English"
       },
       {

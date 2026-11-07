@@ -17,6 +17,10 @@ const knowsAbout = [
   "React",
   "Angular",
   "TypeScript",
+  "Java",
+  "C#",
+  ".NET",
+  "Python",
   "Arabic RTL interfaces",
   "Full-stack web development",
 ];
